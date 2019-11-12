@@ -46,7 +46,7 @@
             </div>
             <div class="row" style="margin-top: 2em">
                 <div class="col">
-                    <a href="PageWeb"><button>Get Started</button></a> 
+                    <a href="HomePage.jsp"><button>Get Started</button></a> 
                 </div>              
             </div>
         </div>
