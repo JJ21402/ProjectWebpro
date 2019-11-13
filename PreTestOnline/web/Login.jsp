@@ -31,8 +31,7 @@
             <form action="Login" method="post">            
                         username : <input type="text" name="username">
                         password: <input type="text" name="username">
-                        <input type="submit" value="Login">
-                    
+                        <input type="submit" value="Login">                   
             </form>
         </div>
 
