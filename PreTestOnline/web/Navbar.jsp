@@ -27,6 +27,6 @@
         <a href="Homepage.jsp">Home</a>
         <a href="#news">News</a>
         <a href="#contact">Exam</a>
-        <a href="#about">Aboutus</a>
+        <a href="#about">About us</a>
     </div>
 
