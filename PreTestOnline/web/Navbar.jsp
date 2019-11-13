@@ -24,7 +24,7 @@
 </style>
 </head>
     <div class="topnav">      
-        <a href="Homepage.jsp">Home</a>
+        <a href="HomePage.jsp">Home</a>
         <a href="#news">News</a>
         <a href="#contact">Exam</a>
         <a href="#about">Aboutus</a>
