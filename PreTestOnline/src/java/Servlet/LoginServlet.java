@@ -5,14 +5,15 @@
  */
 package Servlet;
 
-import Controller.StudentController;
+import Controller.UserController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Student;
+import model.User;
 
 /**
  *
@@ -34,30 +35,36 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
+
         String msg = "";
         if (username.trim().isEmpty() || password.trim().isEmpty()) {
             msg = "Must input all";
             request.setAttribute("msg", msg);
             getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
         }
-        StudentController sc = new StudentController();
-        Student s = sc.findByUsername(username);
-        if (s != null) {
-            if (password.equals(s.getPassword())) {
-                request.getSession().setAttribute("user", s);
+        UserController uc = new UserController();
+        User u = uc.findByUsername(username);
+        System.out.println(u);
+        if (u != null) {
+            if (password.equals(u.getPassword())) {
+                request.getSession().setAttribute("user", u);
                 getServletContext().getRequestDispatcher("/HomePage.jsp").forward(request, response);
             } else {
                 msg = "Wrong";
                 request.setAttribute("msg", msg);
                 getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
             }
+      
+        
         }
         msg = "No user";
         request.setAttribute("msg", msg);
         getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
-   
+
     }
+    
+
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -69,7 +76,7 @@ public class LoginServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -83,7 +90,7 @@ public class LoginServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -94,7 +101,7 @@ public class LoginServlet extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo() {
+        public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
