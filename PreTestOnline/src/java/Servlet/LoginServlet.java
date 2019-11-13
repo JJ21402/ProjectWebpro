@@ -35,6 +35,8 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        
+        
 
         String msg = "";
         if (username.trim().isEmpty() || password.trim().isEmpty()) {
@@ -44,7 +46,6 @@ public class LoginServlet extends HttpServlet {
         }
         UserController uc = new UserController();
         User u = uc.findByUsername(username);
-        System.out.println(u);
         if (u != null) {
             if (password.equals(u.getPassword())) {
                 request.getSession().setAttribute("user", u);
