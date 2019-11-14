@@ -7,10 +7,16 @@ package Servlet;
 
 import Controller.RegisterDao;
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.RegisterBean;
 
 /**
@@ -19,19 +25,30 @@ import model.RegisterBean;
  */
 public class RegisterServlet extends HttpServlet {
 
-    /*protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-     throws ServletException, IOException {
-     response.setContentType("text/html;charset=UTF-8");
-     String username = request.getParameter("username");
-     String password = request.getParameter("password");
-     String email = request.getParameter("email");
-     String fname = request.getParameter("fname");
-     String lname = request.getParameter("lname");
-        
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
 
-     }*/
-    public RegisterServlet() {
+        String fname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
+        String email = request.getParameter("email");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
+        if (fname.isEmpty() || lname.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()) {
+            request.setAttribute("message", "Please fill out all information.");
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+        }
+
+        RegisterDao rd = new RegisterDao();
+        if (rd.findByUsername(username) != null) {
+            request.setAttribute("message", "Username has been used");
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+        }
+        RegisterBean rb = new RegisterBean(0, fname, lname, email, username, password);
+        rd.addNewUser(rb);
+        request.setAttribute("message", "Registered Successfully");
+        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
     }
 
     @Override
@@ -51,31 +68,8 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
-        String fname = request.getParameter("fname");
-        String lname = request.getParameter("lname");
-
-        RegisterBean registerBean = new RegisterBean();
-       
-        registerBean.setUsername(username);
-        registerBean.setPassword(password);
-        registerBean.setEmail(email);
-        registerBean.setFname(fname);
-        registerBean.setLname(lname);
-        RegisterDao rd = new RegisterDao();
+       // int userId = request.getP
 
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }
