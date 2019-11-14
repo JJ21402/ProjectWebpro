@@ -8,6 +8,7 @@
     .topnav {
         overflow: hidden;
         background-color: #072A24;
+        
     }
     .topnav a {
         float: left;
@@ -23,7 +24,7 @@
     }
 </style>
 </head>
-    <div class="topnav">      
+    <div class="topnav ">      
         <a href="HomePage.jsp">Home</a>
         <a href="#news">News</a>
         <a href="#contact">Exam</a>
