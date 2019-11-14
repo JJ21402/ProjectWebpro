@@ -18,22 +18,29 @@
     </head>
     <style>
         body{
-                background-color:#9BCFB8;
-                color: #072A24;              
-            }
+            background-color:#9BCFB8;
+            color: #072A24;              
+        }
         p{
             font-family: 'Questrial', sans-serif;
         }
     </style>
     <body>
         <jsp:include page="Navbar.jsp"/>
-        <p><h1>Login</h1></p>
-        <form action="Login" method="post">
-            <p>user: <input type="text" name="username"></p><br>
-            <p>pass: <input type="text" name="password"></p><br>
-            <input type="submit">
-            ${msg}
+        <div class="container">
+            <div class="row">
+                <form action="Login" method="post">
+                    <p><h2 class="form-heading">Log in</h2></p>
+                    <p><span>${message}</span></p>
+                    <p><input name="username" type="text" class="form-control" placeholder="Username"
+                              autofocus="true"/></p>
+                    <p><input name="password" type="password" class="form-control" placeholder="Password"/></p>
+                    <p><button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button></p>
+                    <p><a href="/Register">Create an account</a></p>
+            </div>
         </form>
-
-    </body>
+    </div>
+</div>
+</div>
+</body>
 </html>
