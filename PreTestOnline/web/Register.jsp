@@ -15,7 +15,9 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
     <body>
+<<<<<<< Updated upstream
         <h1>Hello World!</h1>
+        <jsp:include page="Navbar.jsp"/>
         <form action="process.jsp">  
             <input type="text" name="fname" value="fname" onclick="this.value = ''"/><br/>  
             <input type="text" name="lname"  value="lname" onclick="this.value = ''"/><br/> 
@@ -24,5 +26,8 @@
             <input type="password" name="password"  value="password" onclick="this.value = ''"/><br/>  
             <input type="submit" value="register"/>  
         </form>  
+=======
+        
+>>>>>>> Stashed changes
     </body>
 </html>
