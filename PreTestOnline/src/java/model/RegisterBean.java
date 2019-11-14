@@ -11,34 +11,24 @@ package model;
  */
 public class RegisterBean {
 
-    private String username;
-    private String password;
-    private String email;
+    private int userId;
     private String fname;
     private String lname;
+    private String email;
+    private String username;
+    private String password;
 
-    public RegisterBean(String username, String password, String email, String fname, String lname) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
+    public RegisterBean(int userId, String fname, String lname, String email, String username, String password) {
+        this.userId = userId;
         this.fname = fname;
         this.lname = lname;
+        this.email = email;
+        this.username = username;
+        this.password = password;
     }
 
-    public RegisterBean() {
-        
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getEmail() {
-        return email;
+    public int getUserId() {
+        return userId;
     }
 
     public String getFname() {
@@ -49,16 +39,20 @@ public class RegisterBean {
         return lname;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getPassword() {
+        return password;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public void setFname(String fname) {
@@ -69,11 +63,22 @@ public class RegisterBean {
         this.lname = lname;
     }
 
-    @Override
-    public String toString() {
-        return "Account{" + "username=" + username + ", password=" + password + ", email=" + email + ", fname=" + fname + ", lname=" + lname + '}';
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-   
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "RegisterBean{" + "userId=" + userId + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", username=" + username + ", password=" + password + '}';
+    }
+
 
 }
