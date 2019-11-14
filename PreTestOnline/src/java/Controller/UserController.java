@@ -21,13 +21,14 @@ import model.User;
  */
 public class UserController {
 
-    private final static String FIND_BY_ID = "select * from user_data where userid = ?";
-    private final static String FIND_BY_USERNAME = "select * from user_data where username = ?";
+    private final static String FIND_BY_ID = "select * from userdata where userid = ?";
+    private final static String FIND_BY_USERNAME = "select * from userdata where username = ?";
    
 
     public User findById(int id) {
         User user = null;
-        Connection conn = BuildConnection.getConnection();
+        Connection conn = BuildConnection.getConnection()
+                ;
         try {
             PreparedStatement pstm = conn.prepareStatement(FIND_BY_ID);
             pstm.setInt(1, id);
