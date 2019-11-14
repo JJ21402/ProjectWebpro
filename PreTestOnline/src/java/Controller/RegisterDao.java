@@ -81,7 +81,7 @@ public class RegisterDao {
             PreparedStatement pstm = conn.prepareStatement(ADD_NEWUSER);
             int last = findLastIndexUser();
             System.out.println(last);
-            pstm.setInt(1, last+1);
+            pstm.setInt(1,rb.getUserId());
             pstm.setString(2, rb.getFname());
             pstm.setString(3, rb.getLname());
             pstm.setString(4, rb.getEmail());
@@ -99,7 +99,8 @@ public class RegisterDao {
     public static void main(String[] args) {
         RegisterDao r1 =new RegisterDao();
         
-        RegisterBean rr=new RegisterBean(0,"pedaasd","asd","asdasd", "kuy", "jj");
-        r1.addNewUser(rr);
+        RegisterBean rr=new RegisterBean("asdsadsadpedaasd","asd","asdasd", "kuy", "jj");
+      
+       
     }
 }

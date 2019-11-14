@@ -5,6 +5,8 @@
  */
 package model;
 
+import Controller.RegisterDao;
+
 /**
  *
  * @author bud
@@ -20,6 +22,16 @@ public class RegisterBean {
 
     public RegisterBean(int userId, String fname, String lname, String email, String username, String password) {
         this.userId = userId;
+        this.fname = fname;
+        this.lname = lname;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
+
+    public RegisterBean(String fname, String lname, String email, String username, String password) {
+        RegisterDao r1 = new RegisterDao();
+        userId = r1.findLastIndexUser()+1;
         this.fname = fname;
         this.lname = lname;
         this.email = email;
@@ -79,6 +91,5 @@ public class RegisterBean {
     public String toString() {
         return "RegisterBean{" + "userId=" + userId + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", username=" + username + ", password=" + password + '}';
     }
-
 
 }
