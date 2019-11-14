@@ -17,17 +17,21 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
             .news{
-                  background-color:#9BCFB8;
-                  height: 50vh;
+                background-color:#9BCFB8;
+                height: 100vh;
             }
             body{
                 min-height: 200vh;
+              
+            }
+            html{
+                scroll-behavior: smooth;
             }
         </style>
-    </head>
-    <body>
+            </head>
+    <body id="banner">
         <jsp:include page="Navbar.jsp"/>
-        <div class="bd-example">
+        <div class="bd-example" >
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -68,22 +72,59 @@
             </div>
         </div>
         <div class="news">
-            
-        <div class="container">
-            <div class="row">
-                <div class="col" style="text-align: center;font-size: 48px;font-family: 'Questrial', sans-serif;color: #ffffff;margin-top: 1em;">News</div>
-            </div>
-            <div class="row">
-                <div class="col" style="text-align: center;font-size: 22px;font-family: 'Questrial', sans-serif;color: #ffffff;margin-top: 0.5em;">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 
-                    1500s, when an unknown printer took a galley of type and scrambled it to 
-                    make a type specimen book. It has survived not only five centuries, but also 
-                    the leap into electronic typesetting, remaining essentially unchanged. It was
-                       
+
+            <div class="container">
+                <div class="row">
+                    <div class="col" style="text-align: center;font-size: 48px;font-family: 'Questrial', sans-serif;color: #ffffff;margin-top: 1em;">News & Events</div>
+                </div>
+                <div class="row">
+                    <div class="col" style="text-align: center;font-size: 22px;font-family: 'Questrial', sans-serif;color: #ffffff;margin-top: 0.5em;">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 
+                        1500s, when an unknown printer took a galley of type and scrambled it to 
+                        make a type specimen book. It has survived not only five centuries, but also 
+                        the leap into electronic typesetting, remaining essentially unchanged. It was                    
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center" style="margin-top: 3em;">
+                    <div class="col" style="margin-left: 2em;">
+                        <div class="card" style="width: 18rem;text-align: center">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="margin-left: 2em;">
+                        <div class="card" style="width: 18rem;text-align: center">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="margin-left: 2em;">
+                        <div class="card" style="width: 18rem;text-align: center">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>              
+                    </div>
+
+                </div>
+                <div class="row d-flex justify-content-center" style="margin-top: 3em;">
+                    <div class="col" style="text-align: center;">
+                        <a href="#banner"><img src="images/up.png" alt="up" width=50px height=50px/></a>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </body>
 </html>
