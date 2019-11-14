@@ -10,14 +10,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import model.RegisterBean;
+import model.Register;
 
 
 /**
  *
  * @author bud
  */
-public class RegisterDao {
+public class RegisterController {
 
     private final String FIND_BY_ID = "SELECT * FROM userdata WHERE userId = ?";
     private final String FIND_BY_USERNAME = "SELECT * FROM userdata WHERE USERNAME = ?";
@@ -41,8 +41,8 @@ public class RegisterDao {
         return i;
     }
 
-    public RegisterBean FindUserById(int userId) {
-        RegisterBean b = null;
+    public Register FindUserById(int userId) {
+        Register b = null;
         Connection con = BuildConnection.getConnection();
         try {
             PreparedStatement pstm = con.prepareStatement(FIND_BY_ID);
@@ -50,7 +50,7 @@ public class RegisterDao {
             ResultSet rs = pstm.executeQuery();
 
             if (rs.next()) {
-               b = new RegisterBean(rs.getInt("userId"),rs.getString("fname"), rs.getString("lname"), rs.getString("email"),rs.getString("username"),rs.getString("password"));
+               b = new Register(rs.getInt("userId"),rs.getString("fname"), rs.getString("lname"), rs.getString("email"),rs.getString("username"),rs.getString("password"));
             }
             //  while         
         } catch (SQLException e) {
@@ -59,15 +59,15 @@ public class RegisterDao {
         return b;
     }
 
-    public RegisterBean findByUsername(String username) {
-        RegisterBean b = null;
+    public Register findByUsername(String username) {
+        Register b = null;
         Connection conn = BuildConnection.getConnection();
         try {
             PreparedStatement pstm = conn.prepareStatement(FIND_BY_USERNAME);
             pstm.setString(1, username);
             ResultSet rs = pstm.executeQuery();
             if (rs.next()) {
-               b = new RegisterBean(rs.getInt("userId"),rs.getString("fname"), rs.getString("lname"), rs.getString("email"),rs.getString("username"),rs.getString("password"));
+               b = new Register(rs.getInt("userId"),rs.getString("fname"), rs.getString("lname"), rs.getString("email"),rs.getString("username"),rs.getString("password"));
             }
             conn.close();
         } catch (SQLException e) {
@@ -75,7 +75,7 @@ public class RegisterDao {
         }
         return b;
     }
-    public boolean addNewUser(RegisterBean rb){
+    public boolean addNewUser(Register rb){
         Connection conn = BuildConnection.getConnection();
         try{
             PreparedStatement pstm = conn.prepareStatement(ADD_NEWUSER);
@@ -97,9 +97,9 @@ public class RegisterDao {
         return false;
     }
     public static void main(String[] args) {
-        RegisterDao r1 =new RegisterDao();
+        RegisterController r1 =new RegisterController();
         
-        RegisterBean rr=new RegisterBean("asdsadsadpedaasd","asd","asdasd", "kuy", "jj");
+        Register rr=new Register("asdsadsadpedaasd","asd","asdasd", "kuy", "jj");
       
        
     }

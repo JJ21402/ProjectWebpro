@@ -5,13 +5,13 @@
  */
 package model;
 
-import Controller.RegisterDao;
+import Controller.RegisterController;
 
 /**
  *
  * @author bud
  */
-public class RegisterBean {
+public class Register {
 
     private int userId;
     private String fname;
@@ -20,7 +20,7 @@ public class RegisterBean {
     private String username;
     private String password;
 
-    public RegisterBean(int userId, String fname, String lname, String email, String username, String password) {
+    public Register(int userId, String fname, String lname, String email, String username, String password) {
         this.userId = userId;
         this.fname = fname;
         this.lname = lname;
@@ -29,8 +29,8 @@ public class RegisterBean {
         this.password = password;
     }
 
-    public RegisterBean(String fname, String lname, String email, String username, String password) {
-        RegisterDao r1 = new RegisterDao();
+    public Register(String fname, String lname, String email, String username, String password) {
+        RegisterController r1 = new RegisterController();
         userId = r1.findLastIndexUser()+1;
         this.fname = fname;
         this.lname = lname;

@@ -5,7 +5,7 @@
  */
 package Servlet;
 
-import Controller.RegisterDao;
+import Controller.RegisterController;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.RegisterBean;
+import model.Register;
 
 /**
  *
@@ -34,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        RegisterDao rd = new RegisterDao();
+        RegisterController rd = new RegisterController();
 
         if (fname.isEmpty() || lname.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()) {
             request.setAttribute("message", "Please fill out all information.");
@@ -44,7 +44,7 @@ public class RegisterServlet extends HttpServlet {
                 request.setAttribute("message", "Username has been used");
                 getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
             }
-            RegisterBean rb = new RegisterBean(0, fname, lname, email, username, password);
+            Register rb = new Register(0, fname, lname, email, username, password);
             rd.addNewUser(rb);
             request.setAttribute("message", "Registered Successfully");
             getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
