@@ -17,12 +17,12 @@
     <body>
         <h1>Hello World!</h1>
         <jsp:include page="Navbar.jsp"/>
-        <form action="process.jsp">  
-            <input type="text" name="fname" value="fname" onclick="this.value = ''"/><br/>  
-            <input type="text" name="lname"  value="lname" onclick="this.value = ''"/><br/> 
-            <input type="text" name="email"  value="email" onclick="this.value = ''"/><br/>  
-            <input type="text" name="username"  value="username" onclick="this.value = ''"/><br/>  
-            <input type="password" name="password"  value="password" onclick="this.value = ''"/><br/>  
+        <form action="Register" method="post">  
+            First name <input type="text" name="fname" placeholder="fname" /><br/>  
+            Last name <input type="text" name="lname"  placeholder="lname" /><br/> 
+            E-mail <input type="text" name="email"  placeholder="email" /><br/>  
+            username <input type="text" name="username"  placeholder="username"/><br/>  
+            password <input type="password" name="password"  placeholder="password" /><br/>  
             <input type="submit" value="register"/>  
         </form>  
     </body>

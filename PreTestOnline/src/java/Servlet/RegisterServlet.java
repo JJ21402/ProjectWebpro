@@ -34,21 +34,23 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        RegisterDao rd = new RegisterDao();
 
         if (fname.isEmpty() || lname.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()) {
             request.setAttribute("message", "Please fill out all information.");
             getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+        } else {
+            if (rd.findByUsername(username) != null) {
+                request.setAttribute("message", "Username has been used");
+                getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+            }
+            RegisterBean rb = new RegisterBean(0, fname, lname, email, username, password);
+            rd.addNewUser(rb);
+            request.setAttribute("message", "Registered Successfully");
+            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+
         }
 
-        RegisterDao rd = new RegisterDao();
-        if (rd.findByUsername(username) != null) {
-            request.setAttribute("message", "Username has been used");
-            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
-        }
-        RegisterBean rb = new RegisterBean(0, fname, lname, email, username, password);
-        rd.addNewUser(rb);
-        request.setAttribute("message", "Registered Successfully");
-        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
     }
 
     @Override
@@ -68,8 +70,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       // int userId = request.getP
-
+        processRequest(request, response);
     }
 
 }

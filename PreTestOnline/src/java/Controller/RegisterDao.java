@@ -21,8 +21,8 @@ public class RegisterDao {
 
     private final String FIND_BY_ID = "SELECT * FROM userdata WHERE userId = ?";
     private final String FIND_BY_USERNAME = "SELECT * FROM userdata WHERE USERNAME = ?";
-    private final String ADD_NEWUSER = "INSERT INTO userdata (USER_ID,fname,lname,email,username,password)"
-            + "VALUES (?,?,?,?)";
+    private final String ADD_NEWUSER = "INSERT INTO userdata (userid,fname,lname,email,username,password)"
+            + "VALUES (?,?,?,?,?,?)";
     private final String FIND_LASTUSERID = "SELECT MAX(userId) FROM userdata";
 
     public int findLastIndexUser() {
@@ -95,5 +95,11 @@ public class RegisterDao {
             e.printStackTrace();
         }
         return false;
+    }
+    public static void main(String[] args) {
+        RegisterDao r1 =new RegisterDao();
+        
+        RegisterBean rr=new RegisterBean(0,"pedaasd","asd","asdasd", "kuy", "jj");
+        r1.addNewUser(rr);
     }
 }
