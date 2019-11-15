@@ -25,6 +25,7 @@
               
             }
             html{
+                 
                 scroll-behavior: smooth;
             }
         </style>
@@ -71,7 +72,7 @@
                 </a>
             </div>
         </div>
-        <div class="news">
+        <div class="news" id="news">
 
             <div class="container">
                 <div class="row">
