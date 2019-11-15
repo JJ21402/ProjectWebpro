@@ -99,8 +99,8 @@ public class UserController {
     public static void main(String[] args) {
         UserController r1 =new UserController();
         
-        User rr=new User("asdsadsadpedaasd","asd","asdasd", "kuy", "jj");
-      
+        User rr=new User("jjj","asd","asdasd", "ll", "jj");
+      r1.addNewUser(rr);
        
     }
 }
