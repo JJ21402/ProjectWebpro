@@ -20,9 +20,10 @@
 
             }
             body{
-                background-color:#9BCFB8;
-                text-align: center;
-                color: #072A24;              
+                background-image: url("images/banner5.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                            
             }
             button{
                 border:none;
@@ -46,7 +47,7 @@
             </div>
             <div class="row" style="margin-top: 2em">
                 <div class="col">
-                    <a href="HomePage.jsp"><button>Get Started</button></a> 
+                   <a href="HomePage.jsp"><button>Get Started</button></a> 
                 </div>              
             </div>
         </div>
