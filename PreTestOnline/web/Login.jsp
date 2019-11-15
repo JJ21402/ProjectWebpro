@@ -17,30 +17,25 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <style>
-        body{
-            background-color:#9BCFB8;
-            color: #072A24;              
-        }
+
         p{
             font-family: 'Questrial', sans-serif;
-        }
+            margin: 0px;
+        
+
     </style>
     <body>
         <jsp:include page="Navbar.jsp"/>
-        <div class="container">
-            <div class="row">
-                <form action="Login" method="post">
-                    <p><h2 class="form-heading">Log in</h2></p>
-                    <p><span>${message}</span></p>
-                    <p><input name="username" type="text" class="form-control" placeholder="Username"
-                              autofocus="true"/></p>
-                    <p><input name="password" type="password" class="form-control" placeholder="Password"/></p>
-                    <p><button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button></p>
-                    <p><a href="/Register">Create an account</a></p>
-            </div>
-        </form>
-    </div>
-</div>
-</div>
-</body>
+        <form action="Login" method="post">
+            <p><h2 class="form-heading">Log in</h2></p>
+        <p><span>${message}</span></p>
+        <p><input name="username" type="text" class="form-control" placeholder="Username"
+                  autofocus="true"/></p>
+        <p><input name="password" type="password" class="form-control" placeholder="Password"/></p>
+        <p><button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button></p>
+        <p><input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me</p>
+        <p><a href="Register.jsp">Create an account</a></p> 
+    </form>
+
+    </body>
 </html>
