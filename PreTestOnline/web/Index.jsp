@@ -16,14 +16,11 @@
         <link href="https://fonts.googleapis.com/css?family=Questrial|Varela+Round&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
-            .webname{
-
-            }
+          
             body{
-                background-image: url("images/banner5.png");
+                background-image: url("images/indexbanner2.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
-                            
             }
             button{
                 border:none;
@@ -31,23 +28,36 @@
                 height: 80px;
                 border-radius: 5px;
                  font-family: 'Questrial', sans-serif;
-                 font-size: 28px;
+                 font-size: 25px;
             }      
             p{
-                font-family: 'Questrial', sans-serif;
+                font-family: 'Questrial', sans-serif;\
+                 font-size: 40px;
             }
+            a.index{
+            display:inline-block;
+            padding:0.3em 2em;
+            border:0.1em solid #000000;
+            margin:0 0.2em 0.2em 0;
+            border-radius:0.12em;
+            text-decoration:none;
+            font-weight:500;
+            text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+            
+        }
         </style>
     </head>
     <body>
-        <div class="container" style="margin-top:13em;">
+        <div class="container" style="margin-top:13em;margin-left: 2em;">
             <div class="row">
-                <div class="col webname" style="font-size: 110px">
-                    <p>PretestOnline</p>
+                <div class="col">
+                    <p style="font-size: 90px";>PretestOnline</p>
                 </div>
             </div>
-            <div class="row" style="margin-top: 2em">
+            <div class="row" style="margin-top: 2em;margin-left: 9.5em">
                 <div class="col">
-                   <a href="HomePage.jsp"><button>Get Started</button></a> 
+                    <a href="HomePage.jsp" class="index" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
+                                   color:#3aaf9d;border-radius:10px;"> <p style="font-size: 25px;margin-top: 12px;">Get Started</p></a> 
                 </div>              
             </div>
         </div>
