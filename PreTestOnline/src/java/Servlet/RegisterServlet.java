@@ -34,17 +34,23 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String conpassword = request.getParameter("conpassword");
         UserController rd = new UserController();
 
-        if (fname.isEmpty() || lname.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()) {
+        if (fname.isEmpty() || lname.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()||conpassword.isEmpty()) {
             request.setAttribute("message", "Please fill out all information.");
             getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
         } else {
+            if(!password.equals(conpassword)){
+                request.setAttribute("message", "password not match");
+                getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+            }
             if (rd.findByUsername(username) != null) {
                 request.setAttribute("message", "Username has been used");
                 getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
             }
-            User rb = new User(0, fname, lname, email, username, password);
+            
+            User rb = new User( fname, lname, email, username, password);
             rd.addNewUser(rb);
             request.setAttribute("message", "Registered Successfully");
             getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
@@ -70,7 +76,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+        processRequest(request, response);
 
     }
 }
