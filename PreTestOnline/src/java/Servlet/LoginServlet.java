@@ -6,6 +6,7 @@
 package Servlet;
 
 import Controller.UserController;
+import Controller.UserController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -13,6 +14,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.User;
 import model.User;
 
 /**
@@ -35,8 +38,6 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
-        
 
         String msg = "";
         if (username.trim().isEmpty() || password.trim().isEmpty()) {
@@ -44,28 +45,22 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("msg", msg);
             getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
         }
-        UserController uc = new UserController();
-        User u = uc.findByUsername(username);
-        if (u != null) {
-            if (password.equals(u.getPassword())) {
-                request.getSession().setAttribute("user", u);
-                getServletContext().getRequestDispatcher("/HomePage.jsp").forward(request, response);
-            } else {
-                msg = "Wrong";
-                request.setAttribute("msg", msg);
-                getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
-            }
-      
-        
+        UserController rc = new UserController();
+        User r = rc.findByUsername(username);
+        if (r == null) {
+            msg = "No user";
+            request.setAttribute("msg", msg);
+            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
         }
-        msg = "No user";
-        request.setAttribute("msg", msg);
-        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
-
+        if (!r.getPassword().equals(password)) {
+            msg = "Wrong Password";
+            request.setAttribute("message", msg);
+            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+        }
+        HttpSession session = request.getSession();
+        session.setAttribute("user", r);
+        getServletContext().getRequestDispatcher("/HomePage.jsp").forward(request, response);
     }
-    
-
-
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -77,7 +72,7 @@ public class LoginServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -91,7 +86,7 @@ public class LoginServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -102,7 +97,7 @@ public class LoginServlet extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
