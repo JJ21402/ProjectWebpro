@@ -18,46 +18,101 @@
     </head>
     <style>
         .container{
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
         }
-        butt{
-            color: white;
-             background-color: #4CAF50;
-               border: none;
+        a.regis{
+            display:inline-block;
+            padding:0.46em 1.6em;
+            border:0.1em solid #000000;
+            margin:0 0.2em 0.2em 0;
+            border-radius:0.12em;
+            text-decoration:none;
+            font-weight:300;
+            text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
         }
+        a.regis:hover{
+            text-shadow: 0 0 2em rgba(255,255,255,1);
+            color:#FFFFFF;
+            border-color:#FFFFFF;
+        }
+        input[type=text]{
+            width: 50%;
+            height: 25%;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding:8px 8px;
+        }
+        input[type=password]{
+            width: 50%;
+            height: 25%;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding:8px 8px;
+        }
+        input[type=submit]{
+            display:inline-block;
+            padding:0.46em 1.6em;
+            border:0.1em solid #3aaf9d;
+            margin:0 0.2em 0.2em 0;
+            border-radius:0.12em;
+            text-decoration:none;
+            font-weight:300;
+            text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
 
+        }
+        a.home{
+             text-decoration:none;
+             
+        }
     </style>
     <body>
-
-        <!--        <form action="Login" method="post">
-                    <p><h2 class="form-heading">Log in</h2></p>
-                <p><span>${message}</span></p>
-                <p><input name="username" type="text" class="form-control" placeholder="Username"
-                          autofocus="true"/></p>
-                <p><input name="password" type="password" class="form-control" placeholder="Password"/></p>
-                <p><button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button></p>
-                <p><input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me</p>
-                <p><a href="Register.jsp">Create an account</a></p> 
-            </form>-->
         <div class="container" style="margin-top: 7em;border-radius: 15px;">
             <div class="row justify-content-center">
                 <div class="col-5" style="background-color:#3aaf9d;height: 70vh; border-top-left-radius: 15px;
                      border-bottom-left-radius:15px;">
-                     <img src="images/penguin.png" alt="logo" width="40px" height="40px" style="margin-top: 0.5em;"/>
-                     <div style="color: #fff;font-size: 48px;margin-top: 1.5em;text-align: center">
-                         Hello Welcome!
-                     </div>
-                     <div style="margin-top: 2em;text-align: center;color: #fff">
-                         <div>To keep connected with us please</div>
-                         <div>login with your personal info</div>
-                     </div>
-                     <div style="color: #fff">
-                         <button class="butt">Register</button>
-                     </div>
+                    <div style="margin-top: 1em; margin-left: 0.5em;">
+                        <a href="HomePage.jsp" class="home"
+                           style="color: #fff"
+                           ><img src="images/home.png" alt="home" width="30px" height="35px;" style="margin-right: 10px;"/>HomePage</a>
+                    </div>
+                    <div style="color: #fff;font-size: 48px;margin-top: 1.7em;text-align: center">
+                        Hello Welcome!
+                    </div>
+                    <div style="margin-top: 2em;text-align: center;color: #fff;font-size: 18px">
+                        <div>To keep connected with us please</div>
+                        <div>login with your personal info</div>
+                    </div>
+                    <div style="color: #fff;text-align: center;margin-top: 2.5em;">
+                        <a href="Register" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
+                           color:#FFFFFF;border-radius:10px">Register</a>
+                    </div>
+                    
                 </div>
-                <div class="col">
-                    hh
+                <div class="col" style="color:#3aaf9d;margin-top: 1.5em;text-align: center">
+                    <div style="font-size: 36px">Member Login</div>
+                    <div style="margin-top: 0.8em;">
+                        <img src="images/logologin.png" width="125px" height="125px"/>
+                        <div style="margin-top: 0.8em;">Login here using your username and password</div>
+                    </div>
+                    <div style="margin-top: 0.8em;">
+                        <form action="Login" method="post">
+                            <input type="text" placeholder="Username" name="username" required/><br/>
+                            <input type="password" placeholder="Password" name="password" required/></br>
+                            <input type="submit" value="Login" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
+                                   color:#3aaf9d;border-radius:10px;margin-top: 1.5em;"/>
+                        </form>
+
+                    </div>
                 </div>
+
             </div>
 
         </div>
