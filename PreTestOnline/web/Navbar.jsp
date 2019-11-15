@@ -41,7 +41,7 @@
             Home
         </a>
         <a href="#news" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">News</a>
-        <a href="#contact" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Exam</a>
+        <a href="Search.jsp" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Exam</a>
         <a href="#about" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">About us</a>       
         <div class="float-right login">
             <a href="Login" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #072A24;">Login</a>
