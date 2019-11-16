@@ -23,15 +23,22 @@
                 box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
                 border-radius: 20px;
                 margin-top: 1em;
-                width: 80vh;
+                width: 70vh;
                 height: 95vh;
                 text-align: center;
+
             }
             p{
                 font-family: 'Questrial', sans-serif;
 
             }
-            
+            input[type=submit]{
+                border:solid 1.5px;
+            }
+            input[type=text],[type=password]{
+              padding-left: 13px;
+                 border: 1px solid #ccc;
+            }
 
         </style>
     </head>
@@ -39,34 +46,32 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col" style="margin-top: 1em;">
+                <div class="col" style="margin-top: 1.3em;">
 
-                    <div style="font-size: 40px;color:#3aaf9d;text-align: center">
+                    <div style="font-size: 45px;color:#3aaf9d;text-align: center">
                         <p>Profile</p> 
                     </div>
                 </div>
             </div>
 
             <div>
-                
-                <img src="images/man.png" width="100"/>
+
+                <img src="images/man.png" width="150"/>
             </div>
             <br>
-            <div style="margin-top:  0.1em;">
-                <p >Personal Info<br/></p>
+            <div style="margin-top:  0.1em;" >
+                <p style="color: #A6ACAF  ">Personal Info<br/></p>
             </div>
-            
-                
-                    <div>
-                        <p><input type="text" placeholder="Firstname"  style="border-radius:8px;"required value="${user.fname}"/><br/></p>
-                        <p><input type="password" placeholder="Lastname" style="border-radius:8px;" required/></br></p>
-                        <p><input type="password" placeholder="email"  style="border-radius:8px;" required/></br></p>
-                        <p><input type="password" placeholder="Username"  style="border-radius:8px;" required/></br></p>
-                        <p><input type="password" placeholder="Password" style="border-radius:8px;" required/></br></p>
-                        <p><input type="password" placeholder="Confirm Password"  style="border-radius:8px;" required/></p>
-                        <p> <a href="HomePage.jsp"><input type="submit" value="Confirm" style="border-color:#3aaf9d; background-color:#3aaf9d; 
-                                                                     color:white;border-radius:10px;margin-top: 0.3em;"/></a></p>
-                    </div>
+            <div>
+                <p><input type="text" placeholder="Firstname"  style="border-radius:8px; width: 40vh;height: 4.8vh" required value="${user.fname}"/><br/></p>
+                <p><input type="text" placeholder="Lastname" style="border-radius:8px;width: 40vh;height: 4.8vh" required value="${user.lname}"/></br></p>
+                <p><input type="text" placeholder="email"  style="border-radius:8px; width: 40vh;height: 4.8vh" required value="${user.email}"/></br></p>
+                <p><input type="text" placeholder="Username"  style="border-radius:8px; width: 40vh;height: 4.8vh" required value="${user.username}"/></br></p>
+                <p><input type="password" placeholder="Password" style="border-radius:8px; width: 40vh;height: 4.8vh" required/></br></p>
+                <p><input type="password" placeholder="Confirm Password"  style="border-radius:8px; width: 40vh;height: 4.8vh" required /></p>
+                <p> <a href="HomePage.jsp"><input type="submit" value="Confirm" style="border-color:#3aaf9d; background-color:white; 
+                                                  color:#3aaf9d;border-radius:10px;width: 20vh; height: 4.5vh;margin-top: 0.5em; "/></a></p>
+            </div>
 
         </div>
     </body>
