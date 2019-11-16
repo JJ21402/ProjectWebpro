@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -17,7 +18,7 @@
             text-align: center;
             padding: 18px 30px;
             text-decoration: none;
-            
+
 
         }
         .topnav a:hover {
@@ -32,20 +33,22 @@
             padding: 18px 50px;
             margin-top: 4px
         }
-      
+
     </style>
 </head>
-    <div class="topnav ">      
-        <a href="HomePage.jsp" class="link" style="text-decoration: none;font-size: 20px;">
-            <img src="images/penguin.png" alt="logo" width="40px" height="40px" style="margin-right: 0.5em;padding-bottom: 5px;"/>
-            Home
-        </a>
-        <a href="#news" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">News</a>
-        <a href="Search.jsp" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Exam</a>
-        <a href="#about" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">About us</a>       
-        <div class="float-right login">
-            <a href="Login" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #072A24;">Login</a>
-            <a href="Register" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">Register</a>
-        </div>
+<div class="topnav ">      
+    <a href="HomePage.jsp" class="link" style="text-decoration: none;font-size: 20px;">
+        <img src="images/penguin.png" alt="logo" width="40px" height="40px" style="margin-right: 0.5em;padding-bottom: 5px;"/>
+        Home
+    </a>
+    <a href="#news" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">News</a>
+    <a href="Search.jsp" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Exam</a>
+    <a href="#about" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">About us</a>       
+    <div class="float-right login">
+        <a href="${user!=null?"Profile.jsp":"Login"}" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #072A24;"
+            <img src="images/man.png"> ${user==null? "Login":user.fname}</a>
+        <a href="Register" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">${user==null? "Register":""}</a>
+        <a href="Logout" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">${user!=null? "Logout":""}</a>
     </div>
+</div>
 
