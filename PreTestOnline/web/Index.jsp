@@ -31,7 +31,7 @@
                  font-size: 25px;
             }      
             p{
-                font-family: 'Questrial', sans-serif;\
+                font-family: 'Questrial', sans-serif;
                  font-size: 40px;
             }
             a.index{
@@ -51,7 +51,7 @@
         <div class="container" style="margin-top:13em;margin-left: 2em;">
             <div class="row">
                 <div class="col">
-                    <p style="font-size: 90px";>PretestOnline</p>
+                    <p style="font-size: 90px">PretestOnline</p>
                 </div>
             </div>
             <div class="row" style="margin-top: 2em;margin-left: 9.5em">
