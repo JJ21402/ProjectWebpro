@@ -10,8 +10,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.User;
-
 
 /**
  *
@@ -41,7 +42,7 @@ public class UserController {
         return i;
     }
 
-    public User FindUserById(int userId) {
+    public User findUserById(int userId) {
         User b = null;
         Connection con = BuildConnection.getConnection();
         try {
@@ -50,7 +51,7 @@ public class UserController {
             ResultSet rs = pstm.executeQuery();
 
             if (rs.next()) {
-               b = new User(rs.getInt("userId"),rs.getString("fname"), rs.getString("lname"), rs.getString("email"),rs.getString("username"),rs.getString("password"));
+                b = new User(rs.getInt("userId"), rs.getString("fname"), rs.getString("lname"), rs.getString("email"), rs.getString("username"), rs.getString("password"));
             }
             //  while         
         } catch (SQLException e) {
@@ -67,7 +68,7 @@ public class UserController {
             pstm.setString(1, username);
             ResultSet rs = pstm.executeQuery();
             if (rs.next()) {
-               b = new User(rs.getInt("userId"),rs.getString("fname"), rs.getString("lname"), rs.getString("email"),rs.getString("username"),rs.getString("password"));
+                b = new User(rs.getInt("userId"), rs.getString("fname"), rs.getString("lname"), rs.getString("email"), rs.getString("username"), rs.getString("password"));
             }
             conn.close();
         } catch (SQLException e) {
@@ -75,13 +76,14 @@ public class UserController {
         }
         return b;
     }
-    public boolean addNewUser(User rb){
+
+    public boolean addNewUser(User rb) {
         Connection conn = BuildConnection.getConnection();
-        try{
+        try {
             PreparedStatement pstm = conn.prepareStatement(ADD_NEWUSER);
             int last = findLastIndexUser();
             System.out.println(last);
-            pstm.setInt(1,rb.getUserId());
+            pstm.setInt(1, rb.getUserId());
             pstm.setString(2, rb.getFname());
             pstm.setString(3, rb.getLname());
             pstm.setString(4, rb.getEmail());
@@ -90,17 +92,39 @@ public class UserController {
             int rs = pstm.executeUpdate();
             conn.close();
             return true;
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
+
     public static void main(String[] args) {
-        UserController r1 =new UserController();
-        
-        User rr=new User("jjj","asd","asdasd", "ll", "jj");
-      r1.addNewUser(rr);
-       
+        UserController r1 = new UserController();
+
+        User rr = new User("jjj", "asd", "asdasd", "ll", "jj");
+        r1.addNewUser(rr);
     }
+
+    public User updateUserbyId(String fname, String lname, String email) {
+        User l =null;
+        Connection conn = BuildConnection.getConnection();
+        String sqlQuery = "Update user set fname =?,lname =?,email =? where userId =?";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sqlQuery);
+            
+            ps.setString(1, fname);
+            ps.setString(2, lname);
+            ps.setString(3, email);
+           
+
+            ps.execute();
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return l;
+    }
+
 }
+
