@@ -53,14 +53,14 @@ public class ProfileServlet extends HttpServlet {
                 editUser.setEmail(email);
 
                 try {
-                    uc.updateUserdbyId(fname, lname, email);
+                    uc.updateUserbyId(fname, lname, email);
                 } catch (Exception e) {
                     System.out.println(e);
                 }
 
                 response.sendRedirect("Profile.jsp");
                 return;
-
+                
             }
 
         }
