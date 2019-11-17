@@ -16,49 +16,36 @@
         <link href="https://fonts.googleapis.com/css?family=Questrial|Varela+Round&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
-            .todo{
-                margin-top: 15px;
-                background-color:#9BCFB8;
-                height: 480px;
-                box-shadow: 1px 2px 2px 0 #072A24;
-                border-radius: 6px;
+            .container{
+                border: none; 
+                box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
+                border-radius: 20px;
+                margin-top: 1em;
+                width: 300vh;
+                height: 190vh;
+                text-align: center;
             }
-            .detail{
-                font-size: 36px;
+            p{
                 font-family: 'Questrial', sans-serif;
-                margin-top: 15px;
-                padding-top: 20px;
-                margin-left: 20px;
+
             }
-            button{
-                 border:none;
-                width: 180px;
-                height: 80px;
-                 box-shadow: 1px 2px 2px 0 #072A24;
+            body{
+                height: 200vh;
             }
         </style>
     </head>
     <body >
-        <jsp:include page="Navbar.jsp"/>
-    <center style="font-size: 50px;font-family: 'Questrial', sans-serif;margin-top: 15px;">Start Quiz</center>
-        <div class="container todo">
-            <div class="col detail">
-                Category :
+        <div class="container">
+            <div class="row justify-content-center">
+                <div style="font-size: 45px;color:#3aaf9d;text-align: center;">
+                    <div style="font-family: 'Questrial', sans-serif;">
+                        Start Quiz
+                    </div> 
+                </div>
             </div>
-            <div class="col detail">
-                Subject :
-            </div>
-            <div class="col detail">
-                Grade :
-            </div>
-            <div class="col detail">
-                Quantity :
-            </div>
-            <div class="col" style="text-align: center;margin-top: 10px;padding-top: 10px;">
-                <a><button style="border-radius: 10px;font-family: 'Questrial', sans-serif;
-                 font-size: 28px;">Do Quiz</button></a>
-            </div>
-                
+
+
         </div>
+
     </body>
 </html>
