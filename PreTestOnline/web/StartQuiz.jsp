@@ -4,6 +4,7 @@
     Author     : JJ
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -43,7 +44,17 @@
                     </div> 
                 </div>
             </div>
-
+            <c:forEach items="${ques}" var="q">
+            <div class="row">
+                    ${q.questName}
+                    <form action="Check" method="post">
+                        <c:forEach items="${q.answers}" var="x">
+                            <input type="checkbox" name="${x.isRight}"/>${x.ansName}
+                  
+                        </c:forEach>
+                    </form>
+            </div>
+            </c:forEach>
 
         </div>
 
