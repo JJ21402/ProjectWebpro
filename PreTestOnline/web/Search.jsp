@@ -52,7 +52,7 @@
                 <h1>Grade 1 - 3 Quiz</h1>
                 <p>Many of the lessons in this EnglishClub  end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
                     <p>They can be done online or printed out for home or classroom use!</p>
-               <button type="button" class="btn btn-outline-info">Enter</button>
+                    <a href="Cat?grade=a">Enter</a>
             </center>
         </div>
         <div id="section2" class="container-fluid bg2" style="height: 100vh;background-color: #7fb174">
@@ -60,7 +60,7 @@
                 <h2>Grade 4 - 6 Quiz</h2>
                 <p>Many of the lessons in this EnglishClub  end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
                 <p>They can be done online or printed out for home or classroom use!</p>
-              <button type="button" class="btn btn-outline-dark">Enter</button>
+                <a href="Cat?grade=b">Enter</a>
             </center>
         </div>
         <div id="section3" class="container-fluid bg3" style="height: 100vh;background-color:#689c97">
@@ -68,7 +68,7 @@
                 <h2>Grade 7 - 9 Quiz</h2>
                 <p>Many of the lessons in this EnglishClub end with a quiz. Below are direct links to those quizzes in alphabetical order.</p>
                 <p> They can be done online or printed out for home or classroom use!</p>
-               <button type="button" class="btn btn-outline-warning">Enter</button>
+                <a href="Cat?grade=c">Enter</a>
             </center>
         </div>
         <div id="section4" class="container-fluid bg4" style="height: 100vh;background-color:#66cc99">
@@ -76,7 +76,7 @@
                 <h2>Grade 10 - 12 Quiz</h2>
                 <p>Many of the lessons in this EnglishClub end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
                 <p> They can be done online or printed out for home or classroom use!</p>
-              <button type="button" class="btn btn-outline-secondary">Enter</button>
+                <a href="Cat?grade=d">Enter</a>
             </center>
         </div>
     </body>
