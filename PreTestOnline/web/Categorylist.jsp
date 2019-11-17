@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Bootstrap Example</title>
+        <title>Categories List</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -23,9 +23,11 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>No.</th>
                         <th>Name</th>
-                        <th>Section</th>
-                        <th>Class</th>
+                        <th>Grade</th>
+                        <th>Icon</th>
+                        <th>Icon</th>
                     </tr>
                 </thead>
                 <tbody>   
