@@ -12,43 +12,43 @@ package model;
 public class Category {
     int catId;
     String catName;
-    int numOfQues;
+    int grade;
 
-    public Category(int catId, String catName, int numOfQues) {
+    public Category(int catId, String catName, int grade) {
         this.catId = catId;
         this.catName = catName;
-        this.numOfQues = numOfQues;
+        this.grade = grade;
     }
 
     public int getCatId() {
         return catId;
     }
 
-    public String getCatName() {
-        return catName;
-    }
-
-    public int getNumOfQues() {
-        return numOfQues;
-    }
-
     public void setCatId(int catId) {
         this.catId = catId;
+    }
+
+    public String getCatName() {
+        return catName;
     }
 
     public void setCatName(String catName) {
         this.catName = catName;
     }
 
-    public void setNumOfQues(int numOfQues) {
-        this.numOfQues = numOfQues;
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 
     @Override
     public String toString() {
-        return "Category{" + "catId=" + catId + ", catName=" + catName + ", numOfQues=" + numOfQues + '}';
+        return "Category{" + "catId=" + catId + ", catName=" + catName + ", grade=" + grade + '}';
     }
-    
+
     
     
 }
