@@ -91,5 +91,8 @@ public class User {
     public String toString() {
         return "RegisterBean{" + "userId=" + userId + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", username=" + username + ", password=" + password + '}';
     }
+    public User(){
+    
+}
 
 }
