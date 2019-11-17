@@ -6,12 +6,14 @@
 package Servlet;
 
 import Controller.UserController;
+import com.sun.corba.se.impl.orbutil.ORBUtility;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.User;
 
 /**
@@ -36,36 +38,43 @@ public class ProfileServlet extends HttpServlet {
             response.sendRedirect("Login");
             return;
         };
-        User userSession = (User) request.getSession(false).getAttribute("user");
-        String UserLoggedIn = userSession.getUsername();
+        User u = new User();
+        String fname = request.getParameter("fname");
+//        String lname = request.getParameter("lname");
+//        String email = request.getParameter("email");
 
-        UserController uc = new UserController();
-        if (request.getParameter("userId") != null) {
-            String fname = request.getParameter("fname");
-            String lname = request.getParameter("lname");
-            String email = request.getParameter("email");
-            
-            User editUser = uc.findByUsername(UserLoggedIn);
-
-            if (editUser != null) {
-                editUser.setFname(fname);
-                editUser.setLname(lname);
-                editUser.setEmail(email);
-
-                try {
-                    uc.updateUserbyId(fname, lname, email);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-
-                response.sendRedirect("Profile.jsp");
-                return;
-                
-            }
+        if (fname.equals(request.getParameter("fname"))) {
+            UserController uc = new UserController();
+            uc.editUserInfo(u);
+            request.setAttribute("fname", u);
 
         }
+        getServletContext().getRequestDispatcher("Profile.jsp").forward(request, response);
+
     }
 
+//    getServletContext()
+//
+//.getRequestDispatcher("/Profile.jsp").forward(request, response);
+//          HttpSession s1 = request.getSession();
+//            String fname = request.getParameter("fname");
+//        if (s1.getAttribute("user") != null) {
+//            if (((User) s1.getAttribute("fname")).equals(fname)) {
+//                User u = (User) s1.getAttribute("fname");
+//                
+//                s1.setAttribute("fname", fname);
+//               UserController uc = new UserController();
+//                uc.addNewUser(u);
+//                
+//               // s1.setAttribute("ListofQuiz", qc.getallquizzes((Members) s1.getAttribute("member")));
+//                response.sendRedirect("MyQuiz.jsp");
+//
+//            }
+//
+//        } else {
+//
+//            response.sendRedirect("MyQuiz.jsp");
+//        }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
