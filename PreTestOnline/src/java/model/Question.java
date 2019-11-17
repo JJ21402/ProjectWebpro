@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author bud
@@ -12,7 +14,16 @@ package model;
 public class Question {
     int questId;
     String questName;
+    ArrayList<Answer> answers;
 
+    public ArrayList<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(ArrayList<Answer> answers) {
+        this.answers = answers;
+    }
+    
     public Question(int questId, String questName) {
         this.questId = questId;
         this.questName = questName;
@@ -36,8 +47,16 @@ public class Question {
 
     @Override
     public String toString() {
-        return "Question{" + "questId=" + questId + ", questName=" + questName + '}';
+        return "Question{" + "questId=" + questId + ", questName=" + questName + ", answers=" + answers + '}';
     }
+
+    public Question(int questId, String questName, ArrayList<Answer> answers) {
+        this.questId = questId;
+        this.questName = questName;
+        this.answers = answers;
+    }
+
+    
     
     
     

@@ -5,20 +5,25 @@
  */
 package model;
 
-/**
+/** 
  *
  * @author bud
  */
 public class Answer {
     int ansId;
     String ansName;
-    boolean isRight;
+    String isRight;
 
-    public Answer(int ansId, String ansName, boolean isRight) {
+    public Answer(int ansId, String ansName, String isRight) {
         this.ansId = ansId;
         this.ansName = ansName;
         this.isRight = isRight;
     }
+
+    public Answer(String ansName) {
+        this.ansName = ansName;
+    }
+    
 
     public int getAnsId() {
         return ansId;
@@ -28,7 +33,7 @@ public class Answer {
         return ansName;
     }
 
-    public boolean isIsRight() {
+    public String getIsRight() {
         return isRight;
     }
 
@@ -40,7 +45,7 @@ public class Answer {
         this.ansName = ansName;
     }
 
-    public void setIsRight(boolean isRight) {
+    public void setIsRight(String isRight) {
         this.isRight = isRight;
     }
 

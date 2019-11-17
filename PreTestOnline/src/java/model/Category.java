@@ -19,6 +19,10 @@ public class Category {
         this.catName = catName;
         this.grade = grade;
     }
+    public Category(String catName,int grade){
+        this.catName = catName;
+        this.grade = grade;
+    }
 
     public int getCatId() {
         return catId;
