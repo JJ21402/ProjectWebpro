@@ -4,6 +4,7 @@
     Author     : Nitro5
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,7 +24,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>No.</th>
                         <th>Name</th>
                         <th>Grade</th>
                         <th>Icon</th>
@@ -31,36 +31,15 @@
                     </tr>
                 </thead>
                 <tbody>   
-                    <tr class="table-primary">
-                        <td>Primary</td>
-                        <td>Joe</td>
-                        <td>joe@example.com</td>
+                    <c:forEach items="${cate}" var="c">
+                    <tr>
+                        <td>${c.catName}</td>
+                        <td>${c.grade}</td>   
+                        <td><a href="Question?catid=${c.catId}">DoExam</a></td>
                     </tr>
-                    <tr class="table-success">
-                        <td>Success</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
-                    </tr>
-                    <tr class="table-danger">
-                        <td>Danger</td>
-                        <td>Moe</td>
-                        <td>mary@example.com</td>
-                    </tr>
-                    <tr class="table-info">
-                        <td>Info</td>
-                        <td>Dooley</td>
-                        <td>july@example.com</td>
-                    </tr>
-                    <tr class="table-warning">
-                        <td>Warning</td>
-                        <td>Refs</td>
-                        <td>bo@example.com</td>
-                    </tr>
-                    <tr class="table-active">
-                        <td>Active</td>
-                        <td>Activeson</td>
-                        <td>act@example.com</td>
-                    </tr>
+                    </c:forEach>
+                    
+                    
                 </tbody>
             </table>
         </div>
