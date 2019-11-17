@@ -10,6 +10,8 @@
             background-color: #072A24;
             font-family: 'Questrial', sans-serif;
             height: 65px;
+            position: fixed;
+            width: 100%;
         }
         .link {
             float: left;
