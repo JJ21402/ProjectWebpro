@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.User;
@@ -98,33 +99,66 @@ public class UserController {
         return false;
     }
 
-    public static void main(String[] args) {
-        UserController r1 = new UserController();
+//    public static void main(String[] args) {
+//        UserController r1 = new UserController();
+//
+//        User rr = new User("jjj", "asd", "asdasd", "ll", "jj");
+//        r1.addNewUser(rr);
+//    }
+    public ArrayList<User> getAllUser() {
+        ArrayList<User> list = new ArrayList<User>();
+        String sql = "SELECT * FROM userdata";
+        ResultSet rs = updateUserInfo(sql);
+        try {
+            while (rs.next()) {
+                User user = new User();
+                user.setFname(rs.getString("fname"));
+                user.setLname(rs.getString("lname"));
+                user.setEmail(rs.getString("email"));
+                list.add(user);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-        User rr = new User("jjj", "asd", "asdasd", "ll", "jj");
-        r1.addNewUser(rr);
+        return list;
+
     }
 
-    public User updateUserbyId(String fname, String lname, String email) {
-        User l =null;
-        Connection conn = BuildConnection.getConnection();
-        String sqlQuery = "Update user set fname =?,lname =?,email =? where userId =?";
+    public void updateUser(String user) {
 
+        //String sqlQuery = "update user set fname =?,lname =?,email =? where userId =?";
         try {
-            PreparedStatement ps = conn.prepareStatement(sqlQuery);
-            
-            ps.setString(1, fname);
-            ps.setString(2, lname);
-            ps.setString(3, email);
-           
-
-            ps.execute();
+            Connection conn = BuildConnection.getConnection();
+            conn.createStatement().execute(user);
+//            PreparedStatement ps = conn.prepareStatement("update userdata set fname =?,lname =?,email=?");
+//            ps.execute(user);
             conn.close();
         } catch (SQLException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return l;
+
     }
 
-}
+    public void editUserInfo(User user) {
+        String userInfo = "update userdata set fname =?" + user.getFname() + "where userId =" + user.getUserId();
+        updateUser(userInfo);
+    }
 
+    public ResultSet updateUserInfo(String user) {
+        ResultSet rs = null;
+        //String sqlQuery = "update user set fname =?,lname =?,email =? where userId =?";
+        try {
+            Connection conn = BuildConnection.getConnection();
+            conn.createStatement().executeQuery(user);
+//            PreparedStatement ps = conn.prepareStatement("update userdata set fname =?,lname =?,email=?");
+//            ps.execute(user);
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return rs;
+    }
+
+   
+}
