@@ -48,13 +48,9 @@
                 <c:forEach items="${ques}" var="q" varStatus="qvs">
                     <div class="row">
                         ${q.questName}
-
                         <c:forEach items="${q.answers}" var="x" varStatus="vs">
-
                             <input type="radio" value="${x.ansId}"name="ans${qvs.count}"/>${x.ansName}
-
                         </c:forEach>
-
                     </div>
                 </c:forEach>
                 <input type="submit" value="submit"/>
