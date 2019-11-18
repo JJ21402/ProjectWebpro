@@ -91,7 +91,7 @@
         }
 
     </style>
-<<<<<<< HEAD
+
     <script>
         function onReady(callback) {
             var intervalId = window.setInterval(function () {
