@@ -73,7 +73,7 @@
             }
 
             onReady(function () {
-                setVisible('.constainer', true);
+                setVisible('#oo', true);
                 setVisible('#loading', false);
             });
         </script>
@@ -82,7 +82,7 @@
     </head>
     <body>
 
-        <div class="container">
+        <div class="container" id="oo">
             <div class="row justify-content-center">
 
                 <div class="col" style=" font-size: 13px;width: 15vh;
