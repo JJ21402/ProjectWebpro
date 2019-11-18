@@ -5,8 +5,11 @@
  */
 package Servlet;
 
+import Controller.QuizController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +32,23 @@ public class CheckServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String isright = request.getParameter("isright");
+        ArrayList<Integer> arrayAnswer = new ArrayList();
+        for (int count = 1; request.getParameter("ans"+count)!=null; count++) {
+            arrayAnswer.add(Integer.valueOf(request.getParameter("ans"+count)));
+        }
+        QuizController quizControl = new QuizController();
+        Iterator<Integer> iterator = arrayAnswer.iterator();
+        int score = 0;
+        while(iterator.hasNext()){
+            int answerId = iterator.next();
+            if(quizControl.findbyques(answerId)==true){
+                score++;
+            }else{
+                // ***
+            }
+        }
+        request.setAttribute("score",score);
+        request.getServletContext().getRequestDispatcher("/Donequiz.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

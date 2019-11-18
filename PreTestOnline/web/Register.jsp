@@ -150,7 +150,7 @@
 
 
                 </div>
-                <div class="col-4" style="background-color:#3aaf9d;height: 70vh; border-top-right-radius: 15px;
+                <div class="col-4" style="background-color:#3aaf9d;min-height: 70vh; border-top-right-radius: 15px;
                      border-bottom-right-radius:15px;">
                     <div style="margin-top: 1em; margin-left: 0.5em;">
                         <a href="HomePage.jsp" class="home"

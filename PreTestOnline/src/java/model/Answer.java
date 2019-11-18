@@ -19,9 +19,12 @@ public class Answer {
         this.ansName = ansName;
         this.isRight = isRight;
     }
-
+    
     public Answer(String ansName) {
         this.ansName = ansName;
+    }
+
+    public Answer() {
     }
     
 
