@@ -81,18 +81,17 @@
                     </div> 
                 </div>
             </div>
-            <c:forEach items="${ques}" var="q">
-                <div class="row">
-                    ${q.questName}
-                    <form action="Check" method="post">
-                        <c:forEach items="${q.answers}" var="x">
-                            <input type="checkbox" name="${x.isRight}"/>${x.ansName}
-
+            <form action="Check" method="post">
+                <c:forEach items="${ques}" var="q" varStatus="qvs">
+                    <div class="row">
+                        ${q.questName}
+                        <c:forEach items="${q.answers}" var="x" varStatus="vs">
+                            <input type="radio" value="${x.ansId}"name="ans${qvs.count}"/>${x.ansName}
                         </c:forEach>
-                    </form>
-                </div>
-            </c:forEach>
-
+                    </div>
+                </c:forEach>
+                <input type="submit" value="submit"/>
+            </form>
         </div>
 
     </body>

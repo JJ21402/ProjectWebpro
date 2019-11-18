@@ -43,6 +43,7 @@
                 background-color:#66cc99;
                 min-height: 100vh;
             }
+
             .page    { display: none; padding: 0 0.5em; }
             /*        .page h1 { font-size: 2em; line-height: 1em; margin-top: 1.1em; font-weight: bold; }
                     .page p  { font-size: 1.5em; line-height: 1.275em; margin-top: 0.15em; }*/
@@ -60,6 +61,17 @@
                 background-repeat: no-repeat;
                 background-position: center;
             }
+
+            a.regis{
+            display:inline-block;
+            padding:0.46em 1.6em;
+            border:0.1em solid #000000;
+            margin:0 0.2em 0.2em 0;
+            border-radius:0.12em;
+            text-decoration:none;
+            font-weight:300;
+            text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+        }
 
         </style>
         <script>
@@ -85,38 +97,42 @@
     <body >
         <jsp:include page="NavbarforSearch.jsp"/>
         <div id="container">
-            <div id="section1" class="container-fluid bg1" style="height: 100vh;background-color: #9aceb8">
-                <center style="padding-top: 15em;">
-                    <h1>Grade 1 - 3 Quiz</h1>
-                    <p>Many of the lessons in this EnglishClub  end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
-                    <p>They can be done online or printed out for home or classroom use!</p>
-                    <a href="Cat?grade=a">Enter</a>
-                </center>
-            </div>
-            <div id="section2" class="container-fluid bg2" style="height: 100vh;background-color: #7fb174">
-                <center style="padding-top: 15em;">
-                    <h2>Grade 4 - 6 Quiz</h2>
-                    <p>Many of the lessons in this EnglishClub  end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
-                    <p>They can be done online or printed out for home or classroom use!</p>
-                    <a href="Cat?grade=b">Enter</a>
-                </center>
-            </div>
-            <div id="section3" class="container-fluid bg3" style="height: 100vh;background-color:#689c97">
-                <center style="padding-top: 15em;">
-                    <h2>Grade 7 - 9 Quiz</h2>
-                    <p>Many of the lessons in this EnglishClub end with a quiz. Below are direct links to those quizzes in alphabetical order.</p>
-                    <p> They can be done online or printed out for home or classroom use!</p>
-                    <a href="Cat?grade=c">Enter</a>
-                </center>
-            </div>
-            <div id="section4" class="container-fluid bg4" style="height: 100vh;background-color:#66cc99">
-                <center style="padding-top: 15em;">
-                    <h2>Grade 10 - 12 Quiz</h2>
-                    <p>Many of the lessons in this EnglishClub end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
-                    <p> They can be done online or printed out for home or classroom use!</p>
-                    <a href="Cat?grade=d">Enter</a>
-                </center>
-            </div>
+        <div id="section1" class="container-fluid bg1" style="height: 100vh;background-color: #9aceb8">
+            <center style="padding-top: 15em;">
+                <h1>Grade 1 - 3 Quiz</h1>
+                <p>Many of the lessons in this EnglishClub  end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
+                <p>They can be done online or printed out for home or classroom use!</p>
+                 <a href="Cat?grade=a" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
+                   color:#FFFFFF;border-radius:10px">Enter</a>
+            </center>
+        </div>
+        <div id="section2" class="container-fluid bg2" style="height: 100vh;background-color: #7fb174">
+            <center style="padding-top: 15em;">
+                <h2>Grade 4 - 6 Quiz</h2>
+                <p>Many of the lessons in this EnglishClub  end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
+                <p>They can be done online or printed out for home or classroom use!</p>
+                <a href="Cat?grade=b" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
+                   color:#FFFFFF;border-radius:10px">Enter</a>
+            </center>
+        </div>
+        <div id="section3" class="container-fluid bg3" style="height: 100vh;background-color:#689c97">
+            <center style="padding-top: 15em;">
+                <h2>Grade 7 - 9 Quiz</h2>
+                <p>Many of the lessons in this EnglishClub end with a quiz. Below are direct links to those quizzes in alphabetical order.</p>
+                <p> They can be done online or printed out for home or classroom use!</p>
+                 <a href="Cat?grade=c" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
+                   color:#FFFFFF;border-radius:10px">Enter</a>
+            </center>
+        </div>
+        <div id="section4" class="container-fluid bg4" style="height: 100vh;background-color:#66cc99">
+            <center style="padding-top: 15em;">
+                <h2>Grade 10 - 12 Quiz</h2>
+                <p>Many of the lessons in this EnglishClub end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
+                <p> They can be done online or printed out for home or classroom use!</p>
+                <a href="Cat?grade=d" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
+                   color:#FFFFFF;border-radius:10px">Enter</a>
+            </center>
+        </div>
         </div>
     </body>
 </html>

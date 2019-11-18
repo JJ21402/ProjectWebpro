@@ -91,6 +91,7 @@
         }
 
     </style>
+<<<<<<< HEAD
     <script>
         function onReady(callback) {
             var intervalId = window.setInterval(function () {
@@ -113,10 +114,11 @@
     
     <body>
         
+    <body style="max-height: 100vh"> 
         <div class="container" style="margin-top: 7em;border-radius: 15px;">
             <div class="row justify-content-center">
-                <div class="col-5" style="background-color:#3aaf9d;height: 70vh; border-top-left-radius: 15px;
-                     border-bottom-left-radius:15px;">
+                <div class="col-5" style="background-color:#3aaf9d;min-height: 70vh; border-top-left-radius: 15px;
+                     border-bottom-left-radius:15px;background-size: cover">
                     <div style="margin-top: 1em; margin-left: 0.5em;">
                         <a href="HomePage.jsp" class="home"
                            style="color: #fff"
