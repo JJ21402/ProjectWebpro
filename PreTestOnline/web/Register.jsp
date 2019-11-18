@@ -52,26 +52,63 @@
                 text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
 
             }
-             a.regis{
-            display:inline-block;
-            padding:0.46em 1.6em;
-            border:0.1em solid #000000;
-            margin:0 0.2em 0.2em 0;
-            border-radius:0.12em;
-            text-decoration:none;
-            font-weight:300;
-            text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-        }
-        a.regis:hover{
-            text-shadow: 0 0 2em rgba(255,255,255,1);
-            color:#FFFFFF;
-            border-color:#FFFFFF;
-        }
-        a.home{
-             text-decoration:none;
-             
-        }
+            a.regis{
+                display:inline-block;
+                padding:0.46em 1.6em;
+                border:0.1em solid #000000;
+                margin:0 0.2em 0.2em 0;
+                border-radius:0.12em;
+                text-decoration:none;
+                font-weight:300;
+                text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+            }
+            a.regis:hover{
+                text-shadow: 0 0 2em rgba(255,255,255,1);
+                color:#FFFFFF;
+                border-color:#FFFFFF;
+            }
+            a.home{
+                text-decoration:none;
+
+            }
+            .page    { display: none; padding: 0 0.5em; }
+            /*        .page h1 { font-size: 2em; line-height: 1em; margin-top: 1.1em; font-weight: bold; }
+                    .page p  { font-size: 1.5em; line-height: 1.275em; margin-top: 0.15em; }*/
+
+            #loading {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                width: 100vw;
+                height: 100vh;
+                background-color: #92b9a2;
+                background-image: url(images/onload.gif);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
         </style>
+        <script>
+            function onReady(callback) {
+                var intervalId = window.setInterval(function () {
+                    if (document.getElementsByTagName('body')[0] !== undefined) {
+                        window.clearInterval(intervalId);
+                        callback.call(this);
+                    }
+                }, 650);
+            }
+
+            function setVisible(selector, visible) {
+                document.querySelector(selector).style.display = visible ? 'block' : 'none';
+            }
+
+            onReady(function () {
+                setVisible('.container', true);
+                setVisible('#loading', false);
+            });
+        </script>
     </head>
     <body>
         <div class="container" style="margin-top: 7em;border-radius: 15px;color:#3aaf9d">
@@ -141,6 +178,7 @@
 
     </body>
 </html> 
+<div id="loading"></div>
 
 
 
