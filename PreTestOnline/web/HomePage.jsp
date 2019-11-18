@@ -43,29 +43,47 @@
                     <div class="carousel-item active">
                         <img src="images/banner1.png" class="d-block w-100" alt="..." style="height: 93vh">
                         <div class="carousel-caption d-none d-md-block">
-                            <div class="conteiner" style="margin-bottom: 10em;">
+                            <div class="conteiner" style="margin-bottom: 10em;margin-left:25em">
                                 <div class="row">
-                                    <div class="col">
-                                        hhhh
+                                    <div class="col" style="text-align: left;font-size: 20px;font-family: 'Questrial', sans-serif;color: #ffffff;margin-top: 5em;">
+                                        <h2>Practise Listening and Speaking Skills</h2> 
+                                        <p>Spend some time each day improving your English, especially your listening and speaking skills. These skills are very important (and difficult to improve).
+                                            People don’t want to use English because their English is terrible. 
+                                            That’s why they rely on their native language so much.</p>
                                     </div>
                                 </div>
                             </div>
-                            <h5>First slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h5>First slide </h5>
+                            <p>Writing this article in English.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="images/banner2.png" class="d-block w-100" alt="..." style="height: 93vh">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="conteiner" style="margin-bottom: 10em;margin-right:25em">
+                                <div class="col" style="text-align: left;font-size: 20px;font-family: 'Questrial', sans-serif;color: #ffffff;margin-top: 5em;">
+                                    <h2>Make English a Part of Your Daily Life</h2> 
+                                    <p>Some people like to do everything in their native language because it’s more comfortable. 
+                                        But if you want to think in English, you have to develop the habit of using English whenever possible.
+                                        When you make English a part of your life, thinking in English is easy.</p>
+                                </div>                       
+                            </div>
+                            <h5>Second slide </h5>
+                            <p>Read something in English quite often.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="images/banner3.png" class="d-block w-100" alt="..." style="height: 93vh">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            <div class="conteiner" style="margin-bottom: 10em;margin-left:25em">
+                                <div class="col" style="text-align: left;font-size: 20px;font-family: 'Questrial', sans-serif;color: #ffffff;margin-top: 5em;">
+                                    <h3>The Reason You Can’t Think in English</h3> 
+                                    <p>Some English students have the habit of translating between English and their native language when they use English.This usually happens when they write and read in English.
+                                        If you have this habit, making English a part of your life is NOT enough; you also have to get rid of this bad habit.</p>
+                                </div>                       
+                            </div>
+                            <h5>Third slide </h5>
+                            <p>Practice speaking English almost every day.</p>
                         </div>
                     </div>
                 </div>
@@ -87,47 +105,42 @@
                 </div>
                 <div class="row">
                     <div class="col" style="text-align: center;font-size: 22px;font-family: 'Questrial', sans-serif;color: #ffffff;margin-top: 0.5em;">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 
-                        1500s, when an unknown printer took a galley of type and scrambled it to 
-                        make a type specimen book. It has survived not only five centuries, but also 
-                        the leap into electronic typesetting, remaining essentially unchanged. It was                    
+                        Some students want to write something in English, they write it in their native language first, then they translate what they wrote to English.
+                        They tend to do this when they have to write a long email, passage, or article in English.This is not a proper way to write in English.
+                        If you do this often, you must stop. If you have to write something in English, force yourself to just write in English from the start.                
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center" style="margin-top: 3em;">
                     <div class="col" style="margin-left: 2em;">
-                        <div class="card" style="width: 18rem;text-align: center">
-                            <img src="..." class="card-img-top" alt="...">
+                        <div class="card" style="width: 19rem;text-align: center">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Youtube</h5>
+                                <p class="card-text">Empower Your Life, Empower Your Language</p>
+                                <a href="http://www.youtube.com/embed/watch?v=dqNYpzP6n3s&list=PLXaM6KmSrQNanXrLQVUPbzMdtOobF6cnK"class="btn btn-secondary">Enter</a>
                             </div>
                         </div>
                     </div>
                     <div class="col" style="margin-left: 2em;">
-                        <div class="card" style="width: 18rem;text-align: center">
-                            <img src="..." class="card-img-top" alt="...">
+                        <div class="card" style="width: 19rem;text-align: center">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                
+                                <h5 class="card-title">Facebook</h5>
+                                <p class="card-text">Empower Your Life, Empower Your Language </p>
+                                <a href="https://www.facebook.com/krupnan"class="btn btn-secondary">Enter</a>
                             </div>
                         </div>
                     </div>
                     <div class="col" style="margin-left: 2em;">
-                        <div class="card" style="width: 18rem;text-align: center">
-                            <img src="..." class="card-img-top" alt="...">
+                        <div class="card" style="width: 19rem;text-align: center">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">Twitter</h5>
+                                <p class="card-text">Empower Your Life, Empower Your Language</p>
+                                <a href="https://twitter.com/krupnan" class="btn btn-secondary">Enter</a>
                             </div>
                         </div>              
                     </div>
-
                 </div>
-                <div class="row d-flex justify-content-center" style="margin-top: 3em;">
+                <div class="row d-flex justify-content-center" style="margin-top: 2em;">
                     <div class="col" style="text-align: center;">
                         <a href="#banner"><img src="images/up.png" alt="up" width=50px height=50px/></a>
                     </div>
