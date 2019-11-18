@@ -72,8 +72,47 @@
              text-decoration:none;
              
         }
+         .page    { display: none; padding: 0 0.5em; }
+/*        .page h1 { font-size: 2em; line-height: 1em; margin-top: 1.1em; font-weight: bold; }
+        .page p  { font-size: 1.5em; line-height: 1.275em; margin-top: 0.15em; }*/
+
+        #loading {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100vw;
+            height: 100vh;
+            background-color: #92b9a2;
+            background-image: url(images/onload.gif);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
     </style>
+    <script>
+        function onReady(callback) {
+            var intervalId = window.setInterval(function () {
+                if (document.getElementsByTagName('body')[0] !== undefined) {
+                    window.clearInterval(intervalId);
+                    callback.call(this);
+                }
+            }, 650);
+        }
+
+        function setVisible(selector, visible) {
+            document.querySelector(selector).style.display = visible ? 'block' : 'none';
+        }
+
+        onReady(function () {
+            setVisible('.container', true);
+            setVisible('#loading', false);
+        });
+    </script>
+    
     <body>
+        
         <div class="container" style="margin-top: 7em;border-radius: 15px;">
             <div class="row justify-content-center">
                 <div class="col-5" style="background-color:#3aaf9d;height: 70vh; border-top-left-radius: 15px;
@@ -118,3 +157,5 @@
         </div>
     </body>
 </html>
+<div id="loading"></div>
+
