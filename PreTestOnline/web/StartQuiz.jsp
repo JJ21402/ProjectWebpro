@@ -50,6 +50,10 @@
                 background-repeat: no-repeat;
                 background-position: center;
             }
+            ol.d {
+                list-style-type: lower-alpha;
+                font-size: 18px;
+            }
 
         </style>
         <script>
@@ -75,23 +79,38 @@
     <body >
         <div class="container">
             <div class="row justify-content-center">
-                <div style="font-size: 45px;color:#3aaf9d;text-align: center;">
+                <div style="font-size: 45px;color:#3aaf9d;text-align: center;margin-top: 0.5em;">
                     <div style="font-family: 'Questrial', sans-serif;">
                         Start Quiz
                     </div> 
                 </div>
             </div>
-            <form action="Check" method="post">
-                <c:forEach items="${ques}" var="q" varStatus="qvs">
-                    <div class="row">
-                        ${q.questName}
-                        <c:forEach items="${q.answers}" var="x" varStatus="vs">
-                            <input type="radio" value="${x.ansId}"name="ans${qvs.count}"/>${x.ansName}
-                        </c:forEach>
+            <div class="row" style="margin-left:1em;font-family: 'Questrial', sans-serif;font-size: 26px;margin-top: 1em">
+                Please make sure that you answer all question
+            </div>
+            <div class="row" style="margin-left: 2em">
+                <form action="Check" method="post">
+                    <c:forEach items="${ques}" var="q" varStatus="qvs">
+                        <div class="row" style="margin-top: 1.5em">
+                            <div style="margin-right: 2em;font-family: 'Questrial', sans-serif;font-size: 22px">${qvs.count}. ${q.questName} </div>
+                            <div class="col">
+                                <ol class="d">
+                                    <c:forEach items="${q.answers}" var="x" varStatus="vs">
+                                        <li>
+                                            <input type="radio" value="${x.ansId}"name="ans${qvs.count}"/>${x.ansName}
+                                        </li>
+                                    </c:forEach>
+                                </ol>
+                            </div>
+                        </div>
+                    </c:forEach>
+                    <div class="row justify-content-center" style="width:100%">
+                        <input type="submit" value="submit" style="margin-top: 1em;"/>
                     </div>
-                </c:forEach>
-                <input type="submit" value="submit"/>
-            </form>
+                    
+                </form>
+            </div>
+
         </div>
 
     </body>
