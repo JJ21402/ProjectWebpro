@@ -61,6 +61,7 @@
         <div class="container">
             <h2>Elementary Grade</h2>
             <p>For Grade : 1 - 3 They can be done online or printed out for home or classroom use!</p>
+            ${admin.name}
             <table class="table">
                 <thead>
                     <tr>
