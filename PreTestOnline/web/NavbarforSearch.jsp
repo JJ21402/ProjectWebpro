@@ -19,7 +19,7 @@
             text-align: center;
             padding: 18px 30px;
             text-decoration: none;
-            
+
 
         }
         .topnav a:hover {
@@ -34,21 +34,25 @@
             padding: 18px 50px;
             margin-top: 4px
         }
-      
+
     </style>
 </head>
-    <div class="topnav ">      
-        <a href="HomePage.jsp" class="link" style="text-decoration: none;font-size: 20px;">
-            <img src="images/penguin.png" alt="logo" width="40px" height="40px" style="margin-right: 0.5em;padding-bottom: 5px;"/>
-            Home
-        </a>
-        <a href="#section1" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Grade1-3</a>
-        <a href="#section2" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Grade4-6</a>
-        <a href="#section3" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Grade7-9</a>
-        <a href="#section4" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Grade10-12</a>     
-        <div class="float-right login">
-            <a href="Login" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #072A24;">Login</a>
-            <a href="Register" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">Register</a>
-        </div>
+<div class="topnav ">      
+    <a href="HomePage.jsp" class="link" style="text-decoration: none;font-size: 20px;">
+        <img src="images/penguin.png" alt="logo" width="40px" height="40px" style="margin-right: 0.5em;padding-bottom: 5px;"/>
+        Home
+    </a>
+    <a href="#section1" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Grade1-3</a>
+    <a href="#section2" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Grade4-6</a>
+    <a href="#section3" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Grade7-9</a>
+    <a href="#section4" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Grade10-12</a>     
+    <div class="float-right login">
+        <a href="${user!=null?"Profile.jsp":"Login"}" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #072A24;"
+           <img src="images/man.png"> ${user==null? "Login":user.fname}</a>
+        <!--            <a href="Login" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #072A24;">Login</a>-->
+        <!--            <a href="Register" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">Register</a>-->
+        <a href="Register" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">${user==null? "Register":""}</a>
+        <a href="Logout" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">${user!=null? "Logout":""}</a>
     </div>
+</div>
 
