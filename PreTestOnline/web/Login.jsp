@@ -148,9 +148,12 @@
                             <input type="text" placeholder="Username" name="username" required/><br/>
                             <input type="password" placeholder="Password" name="password" required/></br>
                             <input type="submit" value="Login" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
-                                   color:#3aaf9d;border-radius:10px;margin-top: 1.5em;"/>
+                                   color:#3aaf9d;border-radius:10px;margin-top: 1em;"/>
                         </form>
 
+                    </div>
+                    <div style="margin-top: 0.5em">
+                        <a href="AdminLogin.jsp">Login for admin click here</a>
                     </div>
                 </div>
 
