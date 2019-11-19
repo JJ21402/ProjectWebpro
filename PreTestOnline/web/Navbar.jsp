@@ -236,4 +236,3 @@
 </body>
 <div id="loading"></div>
 
-<!--<div class="loading"></div>-->
