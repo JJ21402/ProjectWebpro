@@ -89,6 +89,10 @@
             background-repeat: no-repeat;
             background-position: center;
         }
+        p{
+                font-family: 'Questrial', sans-serif;
+
+            }
 
     </style>
 
@@ -119,40 +123,40 @@
             <div class="row justify-content-center">
                 <div class="col-5" style="background-color:#3aaf9d;min-height: 70vh; border-top-left-radius: 15px;
                      border-bottom-left-radius:15px;background-size: cover">
-                    <div style="margin-top: 1em; margin-left: 0.5em;">
+                    <div style="margin-top: 1em; margin-left: 0.5em;font-family: 'Questrial', sans-serif;">
                         <a href="HomePage.jsp" class="home"
                            style="color: #fff"
                            ><img src="images/home.png" alt="home" width="30px" height="35px;" style="margin-right: 10px;"/>HomePage</a>
                     </div>
-                    <div style="color: #fff;font-size: 48px;margin-top: 1.7em;text-align: center">
+                    <div style="color: #fff;font-size: 48px;margin-top: 1.7em;text-align: center;font-family: 'Questrial', sans-serif;">
                         Hello Welcome!
                     </div>
-                    <div style="margin-top: 2em;text-align: center;color: #fff;font-size: 18px">
+                    <div style="margin-top: 2em;text-align: center;color: #fff;font-size: 18px;font-family: 'Questrial', sans-serif;">
                         <div>To keep connected with us please</div>
                         <div>login with your personal info</div>
                     </div>
                     <div style="color: #fff;text-align: center;margin-top: 2.5em;">
                         <a href="Register" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
-                           color:#FFFFFF;border-radius:10px">Register</a>
+                           color:#FFFFFF;border-radius:10px;font-family: 'Questrial', sans-serif;">Register</a>
                     </div>
                     
                 </div>
                 <div class="col" style="color:#3aaf9d;margin-top: 1.5em;text-align: center">
-                    <div style="font-size: 36px">Member Login</div>
+                    <div style="font-size: 36px;font-family: 'Questrial', sans-serif;">Member Login</div>
                     <div style="margin-top: 0.8em;">
                         <img src="images/logologin.png" width="125px" height="125px"/>
-                        <div style="margin-top: 0.8em;">Login here using your username and password</div>
+                        <div style="margin-top: 0.8em;font-family: 'Questrial', sans-serif;">Login here using your username and password</div>
                     </div>
-                    <div style="margin-top: 0.8em;">
+                    <div style="margin-top: 0.8em;font-family: 'Questrial', sans-serif;">
                         <form action="Login" method="post">
                             <input type="text" placeholder="Username" name="username" required/><br/>
                             <input type="password" placeholder="Password" name="password" required/></br>
                             <input type="submit" value="Login" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
-                                   color:#3aaf9d;border-radius:10px;margin-top: 1em;"/>
+                                   color:#3aaf9d;border-radius:10px;margin-top: 1em;font-family: 'Questrial', sans-serif;"/>
                         </form>
 
                     </div>
-                    <div style="margin-top: 0.5em">
+                    <div style="margin-top: 0.5em;font-family: 'Questrial', sans-serif;">
                         <a href="AdminLogin.jsp">Login for admin click here</a>
                     </div>
                 </div>
