@@ -61,7 +61,7 @@
         <div class="container">
             <h2>Elementary Grade</h2>
             <p>For Grade : 1 - 3 They can be done online or printed out for home or classroom use!</p>
-            ${admin.name}
+            Admin : ${admin.name}
             <table class="table">
                 <thead>
                     <tr>
@@ -77,12 +77,16 @@
                             <td>${c.catName}</td>
                             <td>${c.grade}</td>   
                             <td><a href="Question?catid=${c.catId}">DoExam</a></td>
+                            <td><a href="Edit?catid">${admin==null?"":"Edit"}</a></td>
                         </tr>
                     </c:forEach>
 
 
                 </tbody>
             </table>
+            <div class="row justify-content-center">
+                <a href="Add">${admin==null?"":"ADD"}</a> 
+            </div>
         </div>
 
     </body>
