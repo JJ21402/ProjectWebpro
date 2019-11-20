@@ -45,7 +45,8 @@
                <div class="col-sm-12 col-md-6 col-lg-3 my-5">
                    <div class="card border-0">
                        <div class="card-body text-center">
-                           <h4 class="text-uppercase mb-5">Facebook</h4>
+                           <image src="images/facebook.png" style="width: 65px; height: 65px; margin-top: 1.3vh;"> 
+                           <h4 class="text-uppercase mb-5" style="margin-top: 3.8vh;">Facebook</h4>
                            <p>Fb : JJ Wongsripisant</p>
                            <p>Fb : Boos Wasana</p>
                            <p>Fb : Punch Siriyakorn</p>
