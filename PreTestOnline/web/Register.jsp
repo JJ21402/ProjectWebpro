@@ -114,7 +114,7 @@
         <div class="container" style="margin-top: 7em;border-radius: 15px;color:#3aaf9d">
             <div class="row justify-content-center">
                 <div class="col" style="margin-top: 1.5em;">
-                    <div style="margin-left: 1em;font-size: 30px;color:#3aaf9d;text-align: center">
+                    <div style="margin-left: 1em;font-size: 30px;color:#3aaf9d;text-align: center;font-family: 'Questrial', sans-serif;">
                         Registration Form${message}
 
                     </div>
@@ -125,19 +125,19 @@
                     <div class="container-fluid " style="margin-top: 1.5em; ">
                         <form action="Register" method="post">  
                             <div class="row">
-                                <div class="col">
+                                <div class="col" style="font-family: 'Questrial', sans-serif;">
                                     Username <input type="text" name="username"  /><br/>  
                                     Password <input type="password" name="password"   /><br/>
                                     Confirm Password <input type="password" name="conpassword" required/></br>
                                 </div>
-                                <div class="col">
+                                <div class="col" style="font-family: 'Questrial', sans-serif;">
                                     First name <input type="text" name="fname"  /><br/>  
                                     Last name <input type="text" name="lname"/><br/> 
                                     E-mail <input type="text" name="email"  /><br/> 
                                 </div>
                             </div>
                             <div class="row justify-content-center" >
-                                <div style="margin-top: 0.1em;">
+                                <div style="margin-top: 0.1em; font-family: 'Questrial', sans-serif;">
                                     <input type="submit" value="register" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
                                            color:#3aaf9d;border-radius:10px;margin-top: 1.5em;"/> 
                                 </div>   
@@ -152,19 +152,19 @@
                 </div>
                 <div class="col-4" style="background-color:#3aaf9d;min-height: 70vh; border-top-right-radius: 15px;
                      border-bottom-right-radius:15px;">
-                    <div style="margin-top: 1em; margin-left: 0.5em;">
+                    <div style="margin-top: 1em; margin-left: 0.5em;font-family: 'Questrial', sans-serif;">
                         <a href="HomePage.jsp" class="home"
                            style="color: #fff"
                            ><img src="images/home.png" alt="home" width="30px" height="35px;" style="margin-right: 10px;"/>HomePage</a>
                     </div>
-                    <div style="color: #fff;font-size: 48px;margin-top: 1.7em;text-align: center">
+                    <div style="color: #fff;font-size: 48px;margin-top: 1.7em;text-align: center;font-family: 'Questrial', sans-serif;">
                         Hello Welcome!
                     </div>
-                    <div style="margin-top: 2em;text-align: center;color: #fff;font-size: 18px">
+                    <div style="margin-top: 2em;text-align: center;color: #fff;font-size: 18px;font-family: 'Questrial', sans-serif;">
                         <div>Have already an account ?</div>
                         <div>you can login here</div>
                     </div>
-                    <div style="color: #fff;text-align: center;margin-top: 2.5em;">
+                    <div style="color: #fff;text-align: center;margin-top: 2.5em;font-family: 'Questrial', sans-serif;">
                         <a href="Login.jsp" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
                            color:#FFFFFF;border-radius:10px">Login</a>
                     </div>
