@@ -34,6 +34,28 @@
                 background-repeat: no-repeat;
                 background-position: center;
             }
+            input[type=text]{
+            width: 100%;
+            height: 25%;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding:8px 8px;
+        }
+        input[type=submit]{
+            display:inline-block;
+            padding:0.46em 1.6em;
+            border:0.1em solid #3aaf9d;
+            margin:0 0.2em 0.2em 0;
+            border-radius:0.12em;
+            text-decoration:none;
+            font-weight:300;
+            text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+
+        }
 
         </style>
         <script>
@@ -61,11 +83,11 @@
         <div class="container">
             <h2>Elementary Grade</h2>
             <p>For Grade : 1 - 3 They can be done online or printed out for home or classroom use!</p>
-            <p>${admin==null?"":"Admin : ${admin.name}"}</p>
+            <p>${admin==null?"":"Admin :"}${admin.name}</p>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Categories</th>
                         <th>Grade</th>
                         <th>Todo</th>
                         <th>${admin==null?"":"Edit"}</th>
@@ -83,9 +105,22 @@
                 </tbody>
             </table>
             <div class="row justify-content-center">
-                <a href="Add">${admin==null?"":"ADD"}</a> 
+                <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> 
+                    ${admin==null?"":"ADD"}
+                </a>
+                <div class="collapse" id="collapseExample" style="margin-top: 1.5em;">
+                    <div class="card card-body" style="width:70vh;margin-top: 1em">
+                        <form action="Add" method="post">
+                            Category : <input type="text" name="type"/><br>
+                            Grade : <input type="text" name="grade"/><br>
+                            <input type="submit" value="confirm" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
+                                   color:#3aaf9d;margin-left: 13em"/>
+                        </form>                  
+                    </div>
+                </div>
             </div>
         </div>
+
 
     </body>
 </html>
