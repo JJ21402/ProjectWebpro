@@ -61,14 +61,14 @@
         <div class="container">
             <h2>Elementary Grade</h2>
             <p>For Grade : 1 - 3 They can be done online or printed out for home or classroom use!</p>
-            Admin : ${admin.name}
+            <p>${admin==null?"":"Admin : ${admin.name}"}</p>
             <table class="table">
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>Grade</th>
-                        <th>Icon</th>
-                        <th>Icon</th>
+                        <th>Todo</th>
+                        <th>${admin==null?"":"Edit"}</th>
                     </tr>
                 </thead>
                 <tbody>   
@@ -80,8 +80,6 @@
                             <td><a href="Edit?catid">${admin==null?"":"Edit"}</a></td>
                         </tr>
                     </c:forEach>
-
-
                 </tbody>
             </table>
             <div class="row justify-content-center">
