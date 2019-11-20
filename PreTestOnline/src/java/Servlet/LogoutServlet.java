@@ -32,7 +32,7 @@ public class LogoutServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(false);
-        if(session!=null||session.getAttribute("user")!=null){
+        if(session!=null||session.getAttribute("user")!=null||session.getAttribute("admin")!=null){
             session.invalidate();
             getServletContext().getRequestDispatcher("/Index.jsp").forward(request, response);
         }
