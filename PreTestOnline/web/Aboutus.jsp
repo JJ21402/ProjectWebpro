@@ -14,39 +14,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-  </head>
+    <style>
+        p{
+                font-family: 'Questrial', sans-serif;
+
+            }
+    </style>
+</head>
   <body>
       <jsp:include page="Navbar.jsp"/>
     <section id="contact">
        <div class="container" style="margin-top:5em;margin-center: 2em;">
-           <h3 class="text-center text-uppercase">contact us</h3>
+           <h3 class="text-center text-uppercase" style="font-family: 'Questrial', sans-serif;">contact us</h3>
 <!--           <--p class="text-center w-75 m-auto"-->
            <div class="row">
              <div class="col-sm-12 col-md-6 col-lg-3 my-5">
                <div class="card border-0">
                   <div class="card-body text-center">
-                    <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
-                    <h4 class="text-uppercase mb-5">Call us</h4>
-                    <p>+66 87911760</p>
-                    <p>+66 87911760</p>
-                    <p>+66 889797494</p>
+                    <image src="images/answer.png" style="width: 65px; height: 65px; margin-top: 1.3vh;"/>
+                    <h4 class="text-uppercase mb-5" style="margin-top: 3.8vh;font-family: 'Questrial', sans-serif;">Call us</h4>
+                    <p>+ 66 87911760</p>
+                    <p>+ 66 87911760</p>
+                    <p>+ 66 889797494</p>
                   </div>
                 </div>
              </div>
                <div class="col-sm-12 col-md-6 col-lg-3 my-5">
                    <div class="card border-0">
                        <div class="card-body text-center">
-                           <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
-                           <h4 class="text-uppercase mb-5">Office loaction</h4>
-                           <address>126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok, Thailand 10140</address>
+                            <image src="images/maps.png" style="width: 65px; height: 65px; margin-top: 1.3vh;"/>
+                           <h4 class="text-uppercase mb-5 "style="margin-top: 3.8vh;font-family: 'Questrial', sans-serif;">Office loaction</h4>
+                            <p> 126 Pracha Uthit Rd., Bang Mod, Thung Khru, Bangkok, Thailand 10140</p>
                        </div>
                    </div>
                </div>
                <div class="col-sm-12 col-md-6 col-lg-3 my-5">
                    <div class="card border-0">
                        <div class="card-body text-center">
-                           <image src="images/facebook.png" style="width: 65px; height: 65px; margin-top: 1.3vh;"> 
-                           <h4 class="text-uppercase mb-5" style="margin-top: 3.8vh;">Facebook</h4>
+                           <image src="images/facebook.png" style="width: 65px; height: 65px; margin-top: 1.3vh;font-family: 'Questrial', sans-serif;"/> 
+                           <h4 class="text-uppercase mb-5" style="margin-top: 3.8vh;font-family: 'Questrial', sans-serif;">Facebook</h4>
                            <p>Fb : JJ Wongsripisant</p>
                            <p>Fb : Boos Wasana</p>
                            <p>Fb : Punch Siriyakorn</p>
@@ -56,8 +62,8 @@
              <div class="col-sm-12 col-md-6 col-lg-3 my-5">
                <div class="card border-0">
                   <div class="card-body text-center">
-                    <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
-                    <h4 class="text-uppercase mb-5">email</h4>
+                    <image src="images/email.png" style="width: 65px; height: 65px; margin-top: 1.3vh;"/>
+                    <h4 class="text-uppercase mb-5" style="margin-top: 3.8vh;font-family: 'Questrial', sans-serif;">email</h4>
                     <p>pasin.pnz@mail.kmutt.ac.th</p>
                     <p>wasana.bt@mail.kmutt.ac.th</p>
                     <p>siriyakorn.suasosit@mail.kmutt.ac.th</p>
