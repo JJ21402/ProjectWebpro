@@ -84,18 +84,18 @@
 
                 
                 <div class="col" style="color:#3aaf9d;margin-top: 1.5em;text-align: center">
-                    <div style="font-size: 36px">Admin Login</div>
+                    <div style="font-size: 36px;font-family: 'Questrial', sans-serif;">Admin Login</div>
                     <div style="margin-top: 0.4em;">
                         <img src="images/logologin.png" width="125px" height="125px"/>
-                        <div style="margin-top: 0.8em;color: #A6ACAF">Welcome Back!</div>
+                        <div style="margin-top: 0.8em;color: #A6ACAF;font-family: 'Questrial', sans-serif;">Welcome Back!</div>
                     </div>
                     <br>
-                    <div style="margin-top: 0.5em;">
+                    <div style="margin-top: 0.5em;font-family: 'Questrial', sans-serif;">
                         <form action="AdminLogin" method="post">
                             <input type="text" placeholder="Username" name="adusername" style="border-radius:10px;" /><br/>
                             <input type="password" placeholder="Password" name="adpassword" style="border-radius:10px;margin-top: 2vh;"  /></br>
                             <input type="submit" value="Login" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
-                                   color:#3aaf9d;border-radius:10px;margin-top: 1.5em;"/>
+                                   color:#3aaf9d;border-radius:10px;margin-top: 1.5em;font-family: 'Questrial', sans-serif;"/>
                         </form>
 
                     </div>
