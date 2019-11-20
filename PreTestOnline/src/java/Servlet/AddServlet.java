@@ -5,12 +5,14 @@
  */
 package Servlet;
 
+import Controller.AddController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Category;
 
 /**
  *
@@ -29,7 +31,42 @@ public class AddServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       String cat = request.getParameter("cat");
+       String page = request.getParameter("grade_page");
+       int grade = Integer.valueOf(request.getParameter("grade"));
        
+       
+       
+       int gradeId = 0;
+       AddController ac = new AddController();
+       Category c = new Category();
+       
+      
+       c.setCatName(cat);
+       c.setGrade(grade);
+       
+       if(grade>=1&&grade<=3){
+          c.setGradeId(1);
+           System.out.println("111");
+       }
+       else if(grade>=4&&grade<=6){
+           c.setGradeId(2);
+           System.out.println("222");
+           
+       }
+       else if(grade>=7&&grade<=9){
+           c.setGradeId(3);
+           System.out.println("33");
+           
+       }
+       else if(grade>=10&&grade<=12){
+           c.setGradeId(4);
+           System.out.println("444");
+       }
+       
+       ac.Addcat(c);
+       
+       response.sendRedirect("Cat?grade=" + page);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

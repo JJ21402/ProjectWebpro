@@ -48,6 +48,7 @@ public class CatServlet extends HttpServlet {
            System.out.println(cate);
            
           session.setAttribute("cate",cate);
+          request.setAttribute("page", "a");
 //           
 //           System.out.println(cate);
            getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
@@ -56,17 +57,19 @@ public class CatServlet extends HttpServlet {
        if(grade.equals("b")){          
            ArrayList<Category> cate = cc.selectallcat(2);
            request.setAttribute("cate", cate);
-           
+           request.setAttribute("page", "b");
             getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
        }
        if(grade.equals("c")){          
            ArrayList<Category> cate = cc.selectallcat(3);
            request.setAttribute("cate", cate);
+           request.setAttribute("page", "c");
             getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
        }
        if(grade.equals("d")){          
            ArrayList<Category> cate = cc.selectallcat(4);
            request.setAttribute("cate", cate);
+           request.setAttribute("page", "d");
             getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
        }
      

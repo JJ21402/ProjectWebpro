@@ -13,7 +13,8 @@ public class Category {
     int catId;
     String catName;
     int grade;
-
+    int gradeId;
+    
     public Category(int catId, String catName, int grade) {
         this.catId = catId;
         this.catName = catName;
@@ -23,6 +24,26 @@ public class Category {
         this.catName = catName;
         this.grade = grade;
     }
+
+    public Category(int catId, String catName, int grade, int gradeId) {
+        this.catId = catId;
+        this.catName = catName;
+        this.grade = grade;
+        this.gradeId = gradeId;
+    }
+
+    public Category() {
+    }
+    
+
+    public int getGradeId() {
+        return gradeId;
+    }
+
+    public void setGradeId(int gradeId) {
+        this.gradeId = gradeId;
+    }
+    
 
     public int getCatId() {
         return catId;
@@ -50,8 +71,10 @@ public class Category {
 
     @Override
     public String toString() {
-        return "Category{" + "catId=" + catId + ", catName=" + catName + ", grade=" + grade + '}';
+        return "Category{" + "catId=" + catId + ", catName=" + catName + ", grade=" + grade + ", gradeId=" + gradeId + '}';
     }
+
+    
 
     
     

@@ -111,7 +111,9 @@
                 <div class="collapse" id="collapseExample" style="margin-top: 1.5em;">
                     <div class="card card-body" style="width:70vh;margin-top: 1em">
                         <form action="Add" method="post">
-                            Category : <input type="text" name="type"/><br>
+                            
+                            <input type="text" name="grade_page" value="${page}" hidden>
+                            Category : <input type="text" name="cat"/><br>
                             Grade : <input type="text" name="grade"/><br>
                             <input type="submit" value="confirm" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
                                    color:#3aaf9d;margin-left: 13em"/>
