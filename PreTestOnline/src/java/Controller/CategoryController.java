@@ -26,7 +26,7 @@ public class CategoryController {
         ArrayList<Category> cats = new ArrayList<>();
         Connection conn = BuildConnection.getConnection();
         try {
-            PreparedStatement pstm = conn.prepareStatement("select * from category where gradeid=?");
+            PreparedStatement pstm = conn.prepareStatement("select * from category where gradeid=? order by grade");
             pstm.setInt(1,gradeid);
             ResultSet rs = pstm.executeQuery();
             while(rs.next()){
