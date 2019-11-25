@@ -78,7 +78,7 @@
                 </div>
                 <div class="row d-flex justify-content-center" >
             <div class="col" style="text-align: center;background-color:#9BCFB8;margin-bottom: 5em">
-               <img src="images/up.png" alt="up" width=50px height=50px/>
+                <a href="#banner"><img src="images/up.png" alt="up" width=50px height=50px/></a>
             </div>
         </div>
             </div>
