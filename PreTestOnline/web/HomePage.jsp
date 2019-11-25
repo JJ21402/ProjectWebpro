@@ -22,14 +22,14 @@
             }
             body{
                 min-height: 200vh;
-              
+
             }
             html{
-                 
+
                 scroll-behavior: smooth;
             }
         </style>
-            </head>
+    </head>
     <body id="banner">
         <jsp:include page="Navbar.jsp"/>
         <div class="bd-example" >
@@ -123,7 +123,7 @@
                     <div class="col" style="margin-left: 2em;">
                         <div class="card" style="width: 19rem;text-align: center">
                             <div class="card-body">
-                                
+
                                 <h5 class="card-title">Facebook</h5>
                                 <p class="card-text">Empower Your Life, Empower Your Language </p>
                                 <a href="https://www.facebook.com/krupnan"class="btn btn-secondary">Enter</a>
@@ -140,12 +140,10 @@
                         </div>              
                     </div>
                 </div>
-                <div class="row d-flex justify-content-center" style="margin-top: 2em;">
-                    <div class="col" style="text-align: center;">
-                        <a href="#banner"><img src="images/up.png" alt="up" width=50px height=50px/></a>
-                    </div>
-                </div>
+
             </div>
         </div>
+        <jsp:include page="Aboutus.jsp"/>
+        
     </body>
 </html>
