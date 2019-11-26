@@ -15,7 +15,32 @@ public class Question {
     int questId;
     String questName;
     ArrayList<Answer> answers;
+    int catId;
 
+    public Question(int questId, String questName, ArrayList<Answer> answers, int catId) {
+        this.questId = questId;
+        this.questName = questName;
+        this.answers = answers;
+        this.catId = catId;
+    }
+
+    public Question(String questName, int catId) {
+        this.questName = questName;
+        this.catId = catId;
+    }
+
+    public Question() {
+    }
+
+    
+    public int getCatId() {
+        return catId;
+    }
+
+    public void setCatId(int catId) {
+        this.catId = catId;
+    }
+    
     public ArrayList<Answer> getAnswers() {
         return answers;
     }

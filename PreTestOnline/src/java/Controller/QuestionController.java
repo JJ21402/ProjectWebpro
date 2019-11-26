@@ -22,7 +22,7 @@ import model.Question;
  */
 public class QuestionController {
     
-    public ArrayList<Question> findbyques(int id){
+    public ArrayList<Question> findquesbycatid(int id){
         ArrayList<Question> ques = new ArrayList<>();
         Connection c = BuildConnection.getConnection();
         try {
@@ -60,6 +60,6 @@ public class QuestionController {
     public static void main(String[] args) {
         QuestionController qc = new QuestionController();
        
-        System.out.println(qc.findbyques(1));
+        System.out.println(qc.findquesbycatid(1));
     }
 }

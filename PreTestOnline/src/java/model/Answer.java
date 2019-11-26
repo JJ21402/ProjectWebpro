@@ -13,7 +13,17 @@ public class Answer {
     int ansId;
     String ansName;
     String isRight;
+    int quesId;
 
+    public Answer(int ansId, String ansName, String isRight, int quesId) {
+        this.ansId = ansId;
+        this.ansName = ansName;
+        this.isRight = isRight;
+        this.quesId = quesId;
+    }
+    
+    
+    
     public Answer(int ansId, String ansName, String isRight) {
         this.ansId = ansId;
         this.ansName = ansName;
@@ -25,6 +35,14 @@ public class Answer {
     }
 
     public Answer() {
+    }
+
+    public int getQuesId() {
+        return quesId;
+    }
+
+    public void setQuesId(int quesId) {
+        this.quesId = quesId;
     }
     
 

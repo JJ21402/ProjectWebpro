@@ -52,6 +52,14 @@
         <servlet-name>AddServlet</servlet-name>
         <servlet-class>Servlet.AddServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteCatServlet</servlet-name>
+        <servlet-class>Servlet.DeleteCatServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Addqueschoiceservlet</servlet-name>
+        <servlet-class>Servlet.Addqueschoiceservlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -103,6 +111,14 @@
     <servlet-mapping>
         <servlet-name>AddServlet</servlet-name>
         <url-pattern>/Add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCatServlet</servlet-name>
+        <url-pattern>/DeleteCat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Addqueschoiceservlet</servlet-name>
+        <url-pattern>/Addqueschoice</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

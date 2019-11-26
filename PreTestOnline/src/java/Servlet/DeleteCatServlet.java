@@ -1,25 +1,22 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package Servlet;
 
-import Controller.QuestionController;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Question;
 
 /**
  *
  * @author JJ
  */
-public class QuestionServlet extends HttpServlet {
+public class DeleteCatServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,18 +29,11 @@ public class QuestionServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String cat = request.getParameter("catid");
-        System.out.println("xxxx");
-        System.out.println(cat);
-         if(cat !=null){       
-        int catid = Integer.valueOf(request.getParameter("catid"));
-        QuestionController qc = new QuestionController();
-        ArrayList<Question> q = qc.findquesbycatid(catid);
-         System.out.println("yyyy");
-        request.getSession().setAttribute("ques", q);
-        request.setAttribute("catid",cat);
-             System.out.println(q);
-        getServletContext().getRequestDispatcher("/StartQuiz.jsp").forward(request, response);
+        String catId = request.getParameter("catId");
+        if(catId==null){
+            getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
+        }else{
+            
         }
     }
 

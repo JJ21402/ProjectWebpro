@@ -54,7 +54,28 @@
                 list-style-type: lower-alpha;
                 font-size: 18px;
             }
+                 input[type=text]{
+            width: 100%;
+            height: 25%;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding:8px 8px;
+        }
+        input[type=submit]{
+            display:inline-block;
+            padding:0.46em 1.6em;
+            border:0.1em solid #3aaf9d;
+            margin:0 0.2em 0.2em 0;
+            border-radius:0.12em;
+            text-decoration:none;
+            font-weight:300;
+            text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
 
+        }
         </style>
         <script>
             function onReady(callback) {
@@ -85,6 +106,32 @@
                     </div> 
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> 
+                    ${admin==null?"":"ADD"}
+                </a>
+                <div class="collapse" id="collapseExample" style="margin-top: 1.5em;">
+                    <div class="card card-body" style="width:70vh;margin-top: 1em">
+                        <form action="Addqueschoice" method="get"> 
+                            <input type="text" name="catid" value="${catid}" hidden>
+                            Question : <input type="text" name="ques"/><br>
+                            Choice1 : <input type="text" name="choice"/><br>
+                            Choice2 : <input type="text" name="choice"/><br>
+                            Choice3 : <input type="text" name="choice"/><br>
+                            
+                            Answer : <select name="answer">
+                                <option value="1" >choice1</option>
+                                <option value="2"  >choice2</option>
+                                <option value="3" >choice3</option>
+                                
+
+                            </select>
+                            <input type="submit" value="confirm" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
+                                   color:#3aaf9d;margin-left: 13em"/>
+                        </form>                  
+                    </div>
+                </div>
+            </div>
             <div class="row" style="margin-left:1em;font-family: 'Questrial', sans-serif;font-size: 26px;margin-top: 1em">
                 Please make sure that you answer all question
             </div>
@@ -105,7 +152,7 @@
                         </div>
                     </c:forEach>
                     <div class="row justify-content-center" style="width:100%">
-                        <input type="submit" value="submit" style="margin-top: 1em;"/>
+                        <input type="submit" value="submit" style="margin-top: 1em;background-color:rgba(0,0,0,0);"/>
                     </div>
                     
                 </form>

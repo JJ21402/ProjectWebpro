@@ -5,6 +5,7 @@
  */
 package Servlet;
 
+import Controller.AddController;
 import Controller.QuestionController;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,13 +14,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Answer;
 import model.Question;
 
 /**
  *
  * @author JJ
  */
-public class QuestionServlet extends HttpServlet {
+public class Addqueschoiceservlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,19 +34,48 @@ public class QuestionServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String cat = request.getParameter("catid");
-        System.out.println("xxxx");
-        System.out.println(cat);
-         if(cat !=null){       
-        int catid = Integer.valueOf(request.getParameter("catid"));
-        QuestionController qc = new QuestionController();
-        ArrayList<Question> q = qc.findquesbycatid(catid);
-         System.out.println("yyyy");
-        request.getSession().setAttribute("ques", q);
-        request.setAttribute("catid",cat);
-             System.out.println(q);
-        getServletContext().getRequestDispatcher("/StartQuiz.jsp").forward(request, response);
+
+        String ques = request.getParameter("ques");
+        String[] choices = request.getParameterValues("choice");
+        String catid = request.getParameter("catid");
+        String answer = request.getParameter("answer");
+
+        if (ques.trim().isEmpty() || choices == null || catid == null || answer == null) {
+            getServletContext().getRequestDispatcher("/Search.jsp").forward(request, response);
+        } else {
+            int catidd = Integer.valueOf(request.getParameter("catid"));
+            Question q = new Question();
+            Answer a = new Answer();
+
+            AddController ac = new AddController();
+            q.setQuestName(ques);
+            q.setCatId(catidd);
+            ac.Addquestion(q);
+            System.out.println(q);
+            System.out.println("5555");
+            QuestionController qc = new QuestionController();
+            int answercor = Integer.valueOf(request.getParameter("answer"));
+            ArrayList<Question> aq = qc.findquesbycatid(catidd);
+            for (int i = 0; i < choices.length; i++) {
+                a.setIsRight("F");
+                if (i == answercor-1) {
+                    a.setIsRight("T");
+                }
+                a.setAnsName(choices[i]);
+
+                for (Question num : aq) {
+                    a.setQuesId(Integer.valueOf(num.getQuestId()));
+                    //System.out.println(num);
+                }
+
+                ac.Addchoice(a);
+                System.out.println(a);
+                System.out.println("6666");
+            }
+
+            response.sendRedirect("Question?catid=" + catidd);
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
