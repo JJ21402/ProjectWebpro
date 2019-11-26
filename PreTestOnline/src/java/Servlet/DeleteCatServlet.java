@@ -5,12 +5,16 @@
  */
 package Servlet;
 
+import Controller.DeletecatController;
+import Controller.QuestionController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Question;
 
 /**
  *
@@ -29,11 +33,15 @@ public class DeleteCatServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String catId = request.getParameter("catId");
+        String catId = request.getParameter("catid");
         if(catId==null){
             getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
         }else{
-            
+            int catid = Integer.valueOf(request.getParameter("catid"));
+            DeletecatController dcc = new DeletecatController();
+            System.out.println(catid);
+            dcc.deletecat(catid);
+            getServletContext().getRequestDispatcher("/Search.jsp").forward(request, response);
         }
     }
 

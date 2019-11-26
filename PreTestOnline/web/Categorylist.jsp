@@ -76,6 +76,9 @@
                 setVisible('.container', true);
                 setVisible('#loading', false);
             });
+            function myFunctin(){
+                confirm("Do you want to delete ?");
+            }
         </script>
     </head>
     <body>
@@ -90,7 +93,7 @@
                         <th>Categories</th>
                         <th>Grade</th>
                         <th>Todo</th>
-                        <th>${admin==null?"":"Edit"}</th>
+                        <th>${admin==null?"":"Delete"}</th>
                     </tr>
                 </thead>
                 <tbody>   
@@ -99,7 +102,7 @@
                             <td>${c.catName}</td>
                             <td>${c.grade}</td>   
                             <td><a href="Question?catid=${c.catId}">DoExam</a></td>
-                            <td><a href="Edit?catid">${admin==null?"":"Edit"}</a></td>
+                            <td><a href="DeleteCat?catid=${c.catId}" onclick="myFunctin()">${admin==null?"":"Delete"}</a></td>
                         </tr>
                     </c:forEach>
                 </tbody>

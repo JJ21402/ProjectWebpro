@@ -29,7 +29,25 @@ public class DeletecatController {
     }
     public static void main(String[] args) {
         DeletecatController dc = new DeletecatController();
-        dc.deletecat(31);
+        dc.deletecat(26);
     }
-    
+    public void findchoicebyquesid(int quesid){
+        Connection c = BuildConnection.getConnection();
+        try {
+            PreparedStatement p = c.prepareStatement("select * from answer where quesid = ?");
+            p.setInt(1, quesid);
+            p.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(DeletecatController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void findquestionbycatid(int catid){
+        Connection c = BuildConnection.getConnection();
+        try {
+            PreparedStatement p = c.prepareStatement("select * from question where catid =?");
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DeletecatController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
