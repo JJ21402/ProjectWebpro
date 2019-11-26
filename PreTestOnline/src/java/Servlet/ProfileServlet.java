@@ -6,9 +6,7 @@
 package Servlet;
 
 import Controller.UserController;
-import com.sun.corba.se.impl.orbutil.ORBUtility;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,48 +32,54 @@ public class ProfileServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        if (request.getSession().getAttribute("user") == null) {
-            response.sendRedirect("Login");
-            return;
-        };
-        User u = new User();
-        String fname = request.getParameter("fname");
-//        String lname = request.getParameter("lname");
-//        String email = request.getParameter("email");
+        {
 
-        if (fname.equals(request.getParameter("fname"))) {
+            String fname = request.getParameter("fname");
+            String lname = request.getParameter("lname");
+            String email = request.getParameter("email");
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            String conpassword = request.getParameter("conpassword");
+
             UserController uc = new UserController();
-            uc.editUserInfo(u);
-            request.setAttribute("fname", u);
+            User u = new User();
 
+            if (fname.equals(request.getParameter("fname"))) {
+                uc.editUser(u);
+                request.setAttribute("fname", u);
+            }
+
+            if (lname.equals(request.getParameter("lname"))) {
+                uc.editUser(u);
+                request.setAttribute("lname", u);
+            }
+
+            if (email.equals(request.getParameter("email"))) {
+                uc.editUser(u);
+                request.setAttribute("email", u);
+            }
+
+            if (username.equals(request.getParameter("username"))) {
+                uc.editUser(u);
+                request.setAttribute("username", u);
+            }
+
+            if (password.equals(password = request.getParameter("password"))) {
+                uc.editUser(u);
+                request.setAttribute("password", u);
+            }
+
+            if (conpassword.equals(password)) {
+                HttpSession session = request.getSession();
+                session.setAttribute("user", u);
+
+            }
+            getServletContext().getRequestDispatcher("Profile.jsp").forward(request, response);
         }
-        getServletContext().getRequestDispatcher("Profile.jsp").forward(request, response);
-
+       
     }
 
-//    getServletContext()
-//
-//.getRequestDispatcher("/Profile.jsp").forward(request, response);
-//          HttpSession s1 = request.getSession();
-//            String fname = request.getParameter("fname");
-//        if (s1.getAttribute("user") != null) {
-//            if (((User) s1.getAttribute("fname")).equals(fname)) {
-//                User u = (User) s1.getAttribute("fname");
-//                
-//                s1.setAttribute("fname", fname);
-//               UserController uc = new UserController();
-//                uc.addNewUser(u);
-//                
-//               // s1.setAttribute("ListofQuiz", qc.getallquizzes((Members) s1.getAttribute("member")));
-//                response.sendRedirect("MyQuiz.jsp");
-//
-//            }
-//
-//        } else {
-//
-//            response.sendRedirect("MyQuiz.jsp");
-//        }
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

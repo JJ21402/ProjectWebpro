@@ -31,7 +31,7 @@ public class User {
 
     public User(String fname, String lname, String email, String username, String password) {
         UserController r1 = new UserController();
-        userId = r1.findLastIndexUser()+1;
+        userId = r1.findLastIndexUser() + 1;
         this.fname = fname;
         this.lname = lname;
         this.email = email;
@@ -91,8 +91,15 @@ public class User {
     public String toString() {
         return "RegisterBean{" + "userId=" + userId + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", username=" + username + ", password=" + password + '}';
     }
-    public User(){
-    
-}
+
+    public User() {
+
+    }
+
+    public User(String fname, String lname, String email) {
+        this.fname = fname;
+        this.lname = lname;
+        this.email = email;
+    }
 
 }

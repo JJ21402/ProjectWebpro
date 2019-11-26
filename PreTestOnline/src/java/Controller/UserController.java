@@ -25,6 +25,7 @@ public class UserController {
     private final String FIND_BY_USERNAME = "SELECT * FROM userdata WHERE USERNAME = ?";
     private final String ADD_NEWUSER = "INSERT INTO userdata (userid,fname,lname,email,username,password)"
             + "VALUES (?,?,?,?,?,?)";
+    private final String Edit_USER = "UPDATE userdata set fname = ?,lname =?,email= ?,username =?,password=? where userId =?";
     private final String FIND_LASTUSERID = "SELECT MAX(userId) FROM userdata";
 
     public int findLastIndexUser() {
@@ -99,6 +100,30 @@ public class UserController {
         return false;
     }
 
+    public void executeModifyQuery(String sql) {
+        try {
+            Connection conn = BuildConnection.getConnection();
+            conn.createStatement().executeQuery(sql);
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+
+    }
+
+    public ResultSet executeFetchQuery(String sql) {
+        ResultSet rs = null;
+        try {
+            Connection conn = BuildConnection.getConnection();
+            rs = conn.createStatement().executeQuery(sql);
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rs;
+    }
+
 //    public static void main(String[] args) {
 //        UserController r1 = new UserController();
 //
@@ -108,13 +133,16 @@ public class UserController {
     public ArrayList<User> getAllUser() {
         ArrayList<User> list = new ArrayList<User>();
         String sql = "SELECT * FROM userdata";
-        ResultSet rs = updateUserInfo(sql);
+        ResultSet rs = executeFetchQuery(sql);
         try {
             while (rs.next()) {
-                User user = new User();
+
+                User user = new User(rs.getString("fname"), rs.getString("lname"), rs.getString("email"), rs.getString("username"), rs.getString("password"));
                 user.setFname(rs.getString("fname"));
                 user.setLname(rs.getString("lname"));
                 user.setEmail(rs.getString("email"));
+                user.setEmail(rs.getString("ีusername"));
+                user.setEmail(rs.getString("password"));
                 list.add(user);
             }
         } catch (SQLException ex) {
@@ -125,40 +153,33 @@ public class UserController {
 
     }
 
-    public void updateUser(String user) {
+    public boolean editUser(User rb) {
+        
+ 
 
-        //String sqlQuery = "update user set fname =?,lname =?,email =? where userId =?";
-        try {
-            Connection conn = BuildConnection.getConnection();
-            conn.createStatement().execute(user);
-//            PreparedStatement ps = conn.prepareStatement("update userdata set fname =?,lname =?,email=?");
-//            ps.execute(user);
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+                Connection conn = BuildConnection.getConnection();
+                try {
+                    PreparedStatement pstm = conn.prepareStatement(Edit_USER);
+//            pstm.setInt(1, rb.getUserId());
+                    pstm.setString(1, rb.getFname());
+                    pstm.setString(2, rb.getLname());
+                    pstm.setString(3, rb.getEmail());
+                    pstm.setString(4, rb.getUsername());
+                    pstm.setString(5, rb.getPassword());
+                    int rs = pstm.executeUpdate();
+
+                    if (rs > 0) {
+                        System.out.println("Record Updated Successfully");
+                    } else {
+                        System.out.println("There is a problem in updating Record.");
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return false;
+            }
         }
+        
 
-    }
 
-    public void editUserInfo(User user) {
-        String userInfo = "update userdata set fname =?" + user.getFname() + "where userId =" + user.getUserId();
-        updateUser(userInfo);
-    }
 
-    public ResultSet updateUserInfo(String user) {
-        ResultSet rs = null;
-        //String sqlQuery = "update user set fname =?,lname =?,email =? where userId =?";
-        try {
-            Connection conn = BuildConnection.getConnection();
-            conn.createStatement().executeQuery(user);
-//            PreparedStatement ps = conn.prepareStatement("update userdata set fname =?,lname =?,email=?");
-//            ps.execute(user);
-            conn.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return rs;
-    }
-
-   
-}
