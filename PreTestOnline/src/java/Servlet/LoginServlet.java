@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
         }
         if (!r.getPassword().equals(password)) {
             msg = "Wrong Password";
-            request.setAttribute("message", msg);
+            request.setAttribute("msg", msg);
             getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
         }
         HttpSession session = request.getSession();
