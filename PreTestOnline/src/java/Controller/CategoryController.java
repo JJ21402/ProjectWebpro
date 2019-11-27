@@ -40,9 +40,44 @@ public class CategoryController {
                
             return cats;
     }
+    public String findnamecatbycatid(int catid){
+        String catname = null;
+        Connection co = BuildConnection.getConnection();
+        try {
+            PreparedStatement p = co.prepareStatement("select catname from category where catid=?");
+            p.setInt(1, catid);
+            ResultSet rs = p.executeQuery();
+            if(rs.next()){
+                catname = rs.getString("catname");
+                
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return catname;
+    
+}
+    public int findgradecatbycatid(int catid){
+        int grade = 0;
+        Connection co = BuildConnection.getConnection();
+        try {
+            PreparedStatement p = co.prepareStatement("select grade from category where catid=?");
+            p.setInt(1, catid);
+            ResultSet rs = p.executeQuery();
+            if(rs.next()){
+                grade = rs.getInt("grade");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return grade;
+    }
     public static void main(String[] args) {
         CategoryController cc = new CategoryController();
-        cc.selectallcat(1);
+      
+        System.out.println(cc.findgradecatbycatid(1));
     }
 }
 

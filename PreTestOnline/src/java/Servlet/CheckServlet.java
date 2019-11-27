@@ -32,6 +32,8 @@ public class CheckServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String catname = request.getParameter("catname");
+        String grade = request.getParameter("catgrade");
         ArrayList<Integer> arrayAnswer = new ArrayList();
         for (int count = 1; request.getParameter("ans"+count)!=null; count++) {
             arrayAnswer.add(Integer.valueOf(request.getParameter("ans"+count)));
@@ -47,6 +49,9 @@ public class CheckServlet extends HttpServlet {
                 // ***
             }
         }
+        System.out.println(grade);
+        request.setAttribute("catgrade", grade);
+        request.setAttribute("catname", catname);
         request.setAttribute("score",score);
         request.getServletContext().getRequestDispatcher("/Donequiz.jsp").forward(request, response);
     }

@@ -152,6 +152,8 @@
                         </div>
                     </c:forEach>
                     <div class="row justify-content-center" style="width:100%">
+                         <input type="text" name="catname" value="${namecat}" hidden>
+                         <input type="text" name="catgrade" value="${gradecat}" hidden>
                         <input type="submit" value="submit" style="margin-top: 1em;background-color:rgba(0,0,0,0);"/>
                     </div>
                     

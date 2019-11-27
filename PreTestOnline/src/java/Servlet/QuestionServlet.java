@@ -5,6 +5,7 @@
  */
 package Servlet;
 
+import Controller.CategoryController;
 import Controller.QuestionController;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Category;
 import model.Question;
 
 /**
@@ -42,7 +44,10 @@ public class QuestionServlet extends HttpServlet {
          System.out.println("yyyy");
         request.getSession().setAttribute("ques", q);
         request.setAttribute("catid",cat);
-             System.out.println(q);
+             
+             CategoryController cc = new CategoryController();
+             request.setAttribute("gradecat", cc.findgradecatbycatid(catid));
+             request.setAttribute("namecat", cc.findnamecatbycatid(catid));
         getServletContext().getRequestDispatcher("/StartQuiz.jsp").forward(request, response);
         }
     }
