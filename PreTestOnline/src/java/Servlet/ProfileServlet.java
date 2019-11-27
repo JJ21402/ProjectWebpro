@@ -31,19 +31,15 @@ public class ProfileServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
-
+        response.setContentType("text/html;charset=UTF-8");       
             String fname = request.getParameter("fname");
             String lname = request.getParameter("lname");
             String email = request.getParameter("email");
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             String conpassword = request.getParameter("conpassword");
-            User u=(User)request.getSession().getAttribute("user");
-            System.out.println(fname);
-            UserController uc = new UserController();
-            System.out.println(u.getUserId());
+            User u=(User)request.getSession().getAttribute("user");           
+            UserController uc = new UserController();           
 
             if(fname.trim().isEmpty()||lname.trim().isEmpty()||email.trim().isEmpty()||username.trim().isEmpty()
                     ||password.trim().isEmpty()||conpassword.trim().isEmpty()){
@@ -56,9 +52,7 @@ public class ProfileServlet extends HttpServlet {
                     u.setEmail(email);
                     u.setUsername(username);
                     u.setPassword(password);
-                    uc.editUser(u);
-                    System.out.println("5555");
-                    System.out.println(u.getUserId());
+                    uc.editUser(u);                    
                     getServletContext().getRequestDispatcher("/Profile.jsp").forward(request, response);
 
                 }

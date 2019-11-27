@@ -38,8 +38,7 @@ public class DeleteCatServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
         }else{
             int catid = Integer.valueOf(request.getParameter("catid"));
-            DeletecatController dcc = new DeletecatController();
-            System.out.println(catid);
+            DeletecatController dcc = new DeletecatController();           
             dcc.deletecat(catid);
             getServletContext().getRequestDispatcher("/Search.jsp").forward(request, response);
         }

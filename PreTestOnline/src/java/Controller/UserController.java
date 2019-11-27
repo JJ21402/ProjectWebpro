@@ -123,13 +123,6 @@ public class UserController {
         }
         return rs;
     }
-
-//    public static void main(String[] args) {
-//        UserController r1 = new UserController();
-//
-//        User rr = new User("jjj", "asd", "asdasd", "ll", "jj");
-//        r1.addNewUser(rr);
-//    }
     public ArrayList<User> getAllUser() {
         ArrayList<User> list = new ArrayList<User>();
         String sql = "SELECT * FROM userdata";
@@ -153,14 +146,10 @@ public class UserController {
 
     }
 
-    public boolean editUser(User rb) {
-        
- 
-
+    public boolean editUser(User rb) {       
                 Connection conn = BuildConnection.getConnection();
                 try {
                     PreparedStatement pstm = conn.prepareStatement(Edit_USER);
-//            pstm.setInt(1, rb.getUserId());
                     pstm.setString(1, rb.getFname());
                     pstm.setString(2, rb.getLname());
                     pstm.setString(3, rb.getEmail());
@@ -178,18 +167,7 @@ public class UserController {
                     Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 return false;
-            }
-    public static void main(String[] args) {
-        UserController uc = new UserController();
-        User u = new User();
-        u.setUserId(1);
-        u.setFname("JJ");
-        u.setLname("Boos");
-        u.setEmail("KK@jj");
-        u.setUsername("JJB");
-        u.setPassword("1234");
-        uc.editUser(u);
-    }
+            }  
         }
         
 

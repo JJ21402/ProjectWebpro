@@ -46,10 +46,9 @@ public class CheckServlet extends HttpServlet {
             if(quizControl.findbyques(answerId)==true){
                 score++;
             }else{
-                // ***
+               
             }
-        }
-        System.out.println(grade);
+        }       
         request.setAttribute("catgrade", grade);
         request.setAttribute("catname", catname);
         request.setAttribute("score",score);

@@ -33,44 +33,33 @@ public class CatServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String grade = request.getParameter("grade");
-        
-        System.out.println("xxxxx");
-        System.out.println(grade);
+        String grade = request.getParameter("grade");                     
        CategoryController cc = new CategoryController();
-        System.out.println("1111");
-        System.out.println(grade);
-       if(grade.equals("a")){    
-           System.out.println("55555");
-          
+       
+       if(grade.equals("a")){                     
           ArrayList<Category> cate = cc.selectallcat(1);
-           HttpSession session = request.getSession();
-           System.out.println(cate);
-           
+          HttpSession session = request.getSession();                    
           session.setAttribute("cate",cate);
           request.setAttribute("page", "a");
-//           
-//           System.out.println(cate);
-           getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
-           
+          getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);          
         }
        if(grade.equals("b")){          
            ArrayList<Category> cate = cc.selectallcat(2);
            request.setAttribute("cate", cate);
            request.setAttribute("page", "b");
-            getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
+           getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
        }
        if(grade.equals("c")){          
            ArrayList<Category> cate = cc.selectallcat(3);
            request.setAttribute("cate", cate);
            request.setAttribute("page", "c");
-            getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
+           getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
        }
        if(grade.equals("d")){          
            ArrayList<Category> cate = cc.selectallcat(4);
            request.setAttribute("cate", cate);
            request.setAttribute("page", "d");
-            getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
+           getServletContext().getRequestDispatcher("/Categorylist.jsp").forward(request, response);
        }
      
     }

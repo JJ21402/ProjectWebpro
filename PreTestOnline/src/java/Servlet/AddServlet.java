@@ -34,38 +34,26 @@ public class AddServlet extends HttpServlet {
        String cat = request.getParameter("cat");
        String page = request.getParameter("grade_page");
        int grade = Integer.valueOf(request.getParameter("grade"));
-       
-       
-       
-       int gradeId = 0;
+                       
        AddController ac = new AddController();
        Category c = new Category();
-       
-      
+           
        c.setCatName(cat);
        c.setGrade(grade);
        
        if(grade>=1&&grade<=3){
-          c.setGradeId(1);
-           System.out.println("111");
+          c.setGradeId(1);         
        }
        else if(grade>=4&&grade<=6){
-           c.setGradeId(2);
-           System.out.println("222");
-           
+           c.setGradeId(2);                    
        }
        else if(grade>=7&&grade<=9){
-           c.setGradeId(3);
-           System.out.println("33");
-           
+           c.setGradeId(3);                    
        }
        else if(grade>=10&&grade<=12){
            c.setGradeId(4);
-           System.out.println("444");
-       }
-       
-       ac.Addcat(c);
-       
+       }      
+       ac.Addcat(c);     
        response.sendRedirect("Cat?grade=" + page);
     }
 

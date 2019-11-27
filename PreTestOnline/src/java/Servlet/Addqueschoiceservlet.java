@@ -50,9 +50,7 @@ public class Addqueschoiceservlet extends HttpServlet {
             AddController ac = new AddController();
             q.setQuestName(ques);
             q.setCatId(catidd);
-            ac.Addquestion(q);
-            System.out.println(q);
-            System.out.println("5555");
+            ac.Addquestion(q);          
             QuestionController qc = new QuestionController();
             int answercor = Integer.valueOf(request.getParameter("answer"));
             ArrayList<Question> aq = qc.findquesbycatid(catidd);
@@ -64,15 +62,10 @@ public class Addqueschoiceservlet extends HttpServlet {
                 a.setAnsName(choices[i]);
 
                 for (Question num : aq) {
-                    a.setQuesId(Integer.valueOf(num.getQuestId()));
-                    //System.out.println(num);
+                    a.setQuesId(Integer.valueOf(num.getQuestId()));                   
                 }
-
-                ac.Addchoice(a);
-                System.out.println(a);
-                System.out.println("6666");
+                ac.Addchoice(a);              
             }
-
             response.sendRedirect("Question?catid=" + catidd);
         }
 

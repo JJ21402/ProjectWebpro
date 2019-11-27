@@ -30,8 +30,7 @@ public class CategoryController {
             pstm.setInt(1,gradeid);
             ResultSet rs = pstm.executeQuery();
             while(rs.next()){
-                Category cat = new Category(rs.getInt("catId"),rs.getString("catName"),rs.getInt("grade"));
-                
+                Category cat = new Category(rs.getInt("catId"),rs.getString("catName"),rs.getInt("grade"));               
                 cats.add(cat);
             }
         } catch (SQLException ex) {
@@ -73,11 +72,6 @@ public class CategoryController {
             Logger.getLogger(CategoryController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return grade;
-    }
-    public static void main(String[] args) {
-        CategoryController cc = new CategoryController();
-      
-        System.out.println(cc.findgradecatbycatid(1));
     }
 }
 

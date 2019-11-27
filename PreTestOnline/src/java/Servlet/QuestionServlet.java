@@ -34,17 +34,13 @@ public class QuestionServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String cat = request.getParameter("catid");
-        System.out.println("xxxx");
-        System.out.println(cat);
+        String cat = request.getParameter("catid");      
          if(cat !=null){       
         int catid = Integer.valueOf(request.getParameter("catid"));
         QuestionController qc = new QuestionController();
-        ArrayList<Question> q = qc.findquesbycatid(catid);
-         System.out.println("yyyy");
+        ArrayList<Question> q = qc.findquesbycatid(catid);      
         request.getSession().setAttribute("ques", q);
-        request.setAttribute("catid",cat);
-             
+        request.setAttribute("catid",cat);            
              CategoryController cc = new CategoryController();
              request.setAttribute("gradecat", cc.findgradecatbycatid(catid));
              request.setAttribute("namecat", cc.findnamecatbycatid(catid));

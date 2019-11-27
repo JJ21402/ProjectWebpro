@@ -56,10 +56,4 @@ public class QuestionController {
         }
         return aw;
     }
-    
-    public static void main(String[] args) {
-        QuestionController qc = new QuestionController();
-       
-        System.out.println(qc.findquesbycatid(1));
-    }
 }

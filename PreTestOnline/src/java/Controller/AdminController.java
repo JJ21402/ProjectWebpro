@@ -35,8 +35,7 @@ public class AdminController {
 
             if (rs.next()) {
                 a = new Admin(rs.getInt("adminId"), rs.getString("name"), rs.getString("email"), rs.getString("username"), rs.getString("password"));
-            }
-            //  while         
+            }                   
         } catch (SQLException e) {
             e.printStackTrace();
         }

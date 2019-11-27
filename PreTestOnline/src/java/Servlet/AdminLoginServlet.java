@@ -48,7 +48,7 @@ public class AdminLoginServlet extends HttpServlet {
         AdminController ac = new AdminController();
         Admin a = ac.findByUsername(username);
         if (a == null) {
-            msg = "No user";
+            msg = "No Admin";
             request.setAttribute("msg", msg);
             getServletContext().getRequestDispatcher("/AdminLogin.jsp").forward(request, response);
         }
