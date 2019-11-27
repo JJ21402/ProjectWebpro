@@ -31,7 +31,7 @@
                                 <img src="images/logologin.png" width="125px" height="125px"/>
                                 <div style="font-size: 28px;margin-top: 0.5em">Category : ${category.CatName()}</div>
                                 <div style="font-size: 28px;margin-top: 0.5em">Grade : ${grade.GradeName()}</div>
-                                <div style="font-size: 28px;margin-top: 0.5em">Score : ${score}</div>
+                                <div style="font-size: 28px;margin-top: 0.5em">Score : ${score}/5</div>
                                 <div style="margin-top: 0.8em;">
                                 </div>
                                 <div style="margin-top: 2.5em; margin-bottom : 5em;">
