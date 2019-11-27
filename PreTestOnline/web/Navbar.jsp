@@ -226,11 +226,11 @@
     <a href="Search.jsp" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Exam</a>
     <a href="#Aboutus" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">About us</a>       
     <div class="float-right login">
-        <a href="${user!=null?"Profile.jsp":"Login"}" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #34495E;"
+        <a href="${user!=null?"Profile.jsp":"Login"}" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #072A24;"
            <img src="images/man.png"> ${user==null? "Login":user.fname}</a>
            
-        <a href="Register" class="lore" style=" text-decoration: none;color: #fff ; background-color: #34495E;">${user==null&&admin==null? "Register":""}</a>
-        <a href="Logout" class="lore" style=" text-decoration: none;color: #fff ; background-color: #34495E;">${user!=null||admin!=null? "Logout":""}</a>
+        <a href="Register" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">${user!=null||admin!=null? "":"Register"}</a>
+        <a href="Logout" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">${user!=null||admin!=null? "Logout":""}</a>
     </div>
 </div>
 </body>

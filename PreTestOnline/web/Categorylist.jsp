@@ -83,7 +83,7 @@
     </head>
     <body>
 
-        <div class="container" style="margin-top: 6em;border-radius: 30px;">
+        <div class="container" style="margin-top: 3em;border-radius: 30px;">
             <h2>Categories List</h2>
             <p>English Quizzes : Do as many questions as you like. Get the answer after each question!</p>
             <p>${admin==null?"":"Admin :"}${admin.name}</p>

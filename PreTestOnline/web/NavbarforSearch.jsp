@@ -47,12 +47,12 @@
     <a href="#section3" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Grade7-9</a>
     <a href="#section4" class="link" style="text-decoration: none;font-size: 20px;height: 75px;margin-top: 3px">Grade10-12</a>     
     <div class="float-right login">
-        <a href="${user!=null?"Profile.jsp":"Login"}" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #34495E;"
+        <a href="${user!=null?"Profile.jsp":"Login"}" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #072A24;"
            <img src="images/man.png"> ${user==null? "Login":user.fname}</a>
         <!--            <a href="Login" class="lore" style="margin-right: 1.5em; text-decoration: none;color: #fff ; background-color: #072A24;">Login</a>-->
         <!--            <a href="Register" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">Register</a>-->
-        <a href="Register" class="lore" style=" text-decoration: none;color: #fff ; background-color: #34495E;">${user==null? "Register":""}</a>
-        <a href="Logout" class="lore" style=" text-decoration: none;color: #fff ; background-color: #34495E;">${user!=null? "Logout":""}</a>
+        <a href="Register" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">${user==null? "Register":""}</a>
+        <a href="Logout" class="lore" style=" text-decoration: none;color: #fff ; background-color: #072A24;">${user!=null? "Logout":""}</a>
     </div>
 </div>
 
