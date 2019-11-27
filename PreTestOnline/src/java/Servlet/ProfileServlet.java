@@ -32,7 +32,7 @@ public class ProfileServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        {
+        
 
             String fname = request.getParameter("fname");
             String lname = request.getParameter("lname");
@@ -40,44 +40,35 @@ public class ProfileServlet extends HttpServlet {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             String conpassword = request.getParameter("conpassword");
-
+            User u=(User)request.getSession().getAttribute("user");
+            System.out.println(fname);
             UserController uc = new UserController();
-            User u = new User();
+            System.out.println(u.getUserId());
 
-            if (fname.equals(request.getParameter("fname"))) {
-                uc.editUser(u);
-                request.setAttribute("fname", u);
+            if(fname.trim().isEmpty()||lname.trim().isEmpty()||email.trim().isEmpty()||username.trim().isEmpty()
+                    ||password.trim().isEmpty()||conpassword.trim().isEmpty()){
+                getServletContext().getRequestDispatcher("/Profile.jsp").forward(request, response);
+            }else{
+                if(password.equals(conpassword)){
+                    u.setUserId(u.getUserId());
+                    u.setFname(fname);
+                    u.setLname(lname);
+                    u.setEmail(email);
+                    u.setUsername(username);
+                    u.setPassword(password);
+                    uc.editUser(u);
+                    System.out.println("5555");
+                    System.out.println(u.getUserId());
+                    getServletContext().getRequestDispatcher("/Profile.jsp").forward(request, response);
+
+                }
+                request.setAttribute("msg","password not match");
+                getServletContext().getRequestDispatcher("/Profile.jsp").forward(request, response);
             }
-
-            if (lname.equals(request.getParameter("lname"))) {
-                uc.editUser(u);
-                request.setAttribute("lname", u);
-            }
-
-            if (email.equals(request.getParameter("email"))) {
-                uc.editUser(u);
-                request.setAttribute("email", u);
-            }
-
-            if (username.equals(request.getParameter("username"))) {
-                uc.editUser(u);
-                request.setAttribute("username", u);
-            }
-
-            if (password.equals(password = request.getParameter("password"))) {
-                uc.editUser(u);
-                request.setAttribute("password", u);
-            }
-
-            if (conpassword.equals(password)) {
-                HttpSession session = request.getSession();
-                session.setAttribute("user", u);
-
-            }
-            getServletContext().getRequestDispatcher("Profile.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Profile.jsp").forward(request, response);
         }
        
-    }
+    
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -166,6 +166,7 @@ public class UserController {
                     pstm.setString(3, rb.getEmail());
                     pstm.setString(4, rb.getUsername());
                     pstm.setString(5, rb.getPassword());
+                    pstm.setInt(6, rb.getUserId());
                     int rs = pstm.executeUpdate();
 
                     if (rs > 0) {
@@ -178,6 +179,17 @@ public class UserController {
                 }
                 return false;
             }
+    public static void main(String[] args) {
+        UserController uc = new UserController();
+        User u = new User();
+        u.setUserId(1);
+        u.setFname("JJ");
+        u.setLname("Boos");
+        u.setEmail("KK@jj");
+        u.setUsername("JJB");
+        u.setPassword("1234");
+        uc.editUser(u);
+    }
         }
         
 

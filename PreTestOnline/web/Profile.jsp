@@ -105,14 +105,16 @@
                         <p style="color: #A6ACAF  ">Personal Info<br/></p>
                     </div>
                     <div>
-                        <p><input type="text" placeholder="Firstname"  style="border-radius:8px; width: 40vh;height: 4.8vh" required value="${user.fname}"/><br/></p>
-                        <p><input type="text" placeholder="Lastname" style="border-radius:8px;width: 40vh;height: 4.8vh" required value="${user.lname}"/></br></p>
-                        <p><input type="text" placeholder="email"  style="border-radius:8px; width: 40vh;height: 4.8vh" required value="${user.email}"/></br></p>
-                        <p><input type="text" placeholder="Username"  style="border-radius:8px; width: 40vh;height: 4.8vh" required value="${user.username}"/></br></p>
-                        <p><input type="password" placeholder="Password" style="border-radius:8px; width: 40vh;height: 4.8vh" required/></br></p>
-                        <p><input type="password" placeholder="Confirm Password"  style="border-radius:8px; width: 40vh;height: 4.8vh" required /></p>
+                        <form action="Profile" method="post">
+                        <p><input type="text" placeholder="Firstname" name="fname" style="border-radius:8px; width: 40vh;height: 4.8vh" required value="${user.fname}"/><br/></p>
+                        <p><input type="text" placeholder="Lastname" name="lname" style="border-radius:8px;width: 40vh;height: 4.8vh" required value="${user.lname}"/></br></p>
+                        <p><input type="text" placeholder="email" name="email" style="border-radius:8px; width: 40vh;height: 4.8vh" required value="${user.email}"/></br></p>
+                        <p><input type="text" placeholder="Username" name="username" style="border-radius:8px; width: 40vh;height: 4.8vh" required value="${user.username}"/></br></p>
+                        <p><input type="password" placeholder="Password" name="password" style="border-radius:8px; width: 40vh;height: 4.8vh" required/></br></p>
+                        <p><input type="password" placeholder="Confirm Password" name="conpassword" style="border-radius:8px; width: 40vh;height: 4.8vh" required /></p>
                         <p> <a href="HomePage.jsp"><input type="submit" value="Confirm" style="border-color:#3aaf9d; background-color:white; 
                                                           color:#3aaf9d;border-radius:10px;width: 20vh; height: 4.5vh;margin-top: 0.2em; "/></a></p>
+                        </form>
                     </div>
                 </div>
             </div>
