@@ -99,7 +99,7 @@
                 <h1>Grade 1 - 3 Quiz</h1>
                 <p>Many of the lessons in this EnglishClub  end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
                 <p>They can be done online or printed out for home or classroom use!</p>
-                 <a href="Cat?grade=a" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
+                 <a href="${user==null?"Login.jsp":"Cat?grade=a"}" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
                    color:#FFFFFF;border-radius:10px">Enter</a>
             </center>
         </div>
