@@ -5,6 +5,7 @@
  */
 package Servlet;
 
+import Controller.UserController;
 import db.BuildConnection;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -35,6 +36,7 @@ public class ForgotServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -63,23 +65,23 @@ public class ForgotServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
 
         try {
             Connection conn = BuildConnection.getConnection();
 
             String email = request.getParameter("email");
             String password = request.getParameter("password");
-            
+
             PreparedStatement ps = conn.prepareStatement("UPDATE userdata set password=? where email=?");
-            
+
             ps.setString(2, email);
             ps.setString(1, password);
-            
+
             int i = ps.executeUpdate();
             if (i > 0) {
                 getServletContext().getRequestDispatcher("/Index.jsp").forward(request, response);
             } else {
+                request.setAttribute("Error", "msg");
                 response.sendRedirect("/Forgottest.jsp");
             }
 
