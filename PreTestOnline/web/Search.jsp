@@ -99,7 +99,7 @@
                 <h1>Grade 1 - 3 Quiz</h1>
                 <p>Many of the lessons in this EnglishClub  end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
                 <p>They can be done online or printed out for home or classroom use!</p>
-                 <a href="${user==null?"Login.jsp":"Cat?grade=a"}" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
+                 <a href="Cat?grade=a" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
                    color:#FFFFFF;border-radius:10px">Enter</a>
             </center>
         </div>
@@ -108,7 +108,7 @@
                 <h2>Grade 4 - 6 Quiz</h2>
                 <p>Many of the lessons in this EnglishClub  end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
                 <p>They can be done online or printed out for home or classroom use!</p>
-                <a href="${user==null?"Login.jsp":"Cat?grade=b"}" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
+                <a href="Cat?grade=b" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
                    color:#FFFFFF;border-radius:10px">Enter</a>
             </center>
         </div>
@@ -117,7 +117,7 @@
                 <h2>Grade 7 - 9 Quiz</h2>
                 <p>Many of the lessons in this EnglishClub end with a quiz. Below are direct links to those quizzes in alphabetical order.</p>
                 <p> They can be done online or printed out for home or classroom use!</p>
-                 <a href="${user==null?"Login.jsp":"Cat?grade=c"}" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
+                 <a href="Cat?grade=c" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
                    color:#FFFFFF;border-radius:10px">Enter</a>
             </center>
         </div>
@@ -126,7 +126,7 @@
                 <h2>Grade 10 - 12 Quiz</h2>
                 <p>Many of the lessons in this EnglishClub end with a quiz. Below are direct links to those quizzes in alphabetical order. </p>
                 <p> They can be done online or printed out for home or classroom use!</p>
-                <a href="${user==null?"Login.jsp":"Cat?grade=d"}" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
+                <a href="Cat?grade=d" class="regis" style="border-color:#FFFFFF; background-color:rgba(0,0,0,0); 
                    color:#FFFFFF;border-radius:10px">Enter</a>
             </center>
         </div>
