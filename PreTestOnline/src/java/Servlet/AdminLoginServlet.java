@@ -54,8 +54,8 @@ public class AdminLoginServlet extends HttpServlet {
         }
         if (!a.getPassword().equals(password)) {
             msg = "Wrong Password";
-            request.setAttribute("message", msg);
-            
+            request.setAttribute("msg", msg);
+            getServletContext().getRequestDispatcher("/AdminLogin.jsp").forward(request, response);
         }
         HttpSession session = request.getSession();
         session.setAttribute("admin", a);
