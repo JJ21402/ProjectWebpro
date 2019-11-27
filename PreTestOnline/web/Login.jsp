@@ -153,6 +153,7 @@
                             <input type="password" placeholder="Password" name="password" required/></br>
                             <input type="submit" value="Login" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
                                    color:#3aaf9d;border-radius:10px;margin-top: 1em;font-family: 'Questrial', sans-serif;"/>
+                            <a href="Forgottest.jsp">Forgot password</a>
                         </form>
 
                     </div>
