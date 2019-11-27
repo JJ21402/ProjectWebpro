@@ -83,11 +83,11 @@
     </head>
     <body>
 
-        <div class="container">
-            <h2>Elementary Grade</h2>
-            <p>For Grade : 1 - 3 They can be done online or printed out for home or classroom use!</p>
+        <div class="container" style="margin-top: 6em;border-radius: 30px;">
+            <h2>Categories List</h2>
+            <p>English Quizzes : Do as many questions as you like. Get the answer after each question!</p>
             <p>${admin==null?"":"Admin :"}${admin.name}</p>
-            <table class="table">
+            <table class="table table-hover table-bordered">
                 <thead>
                     <tr>
                         <th>Categories</th>
@@ -101,7 +101,7 @@
                         <tr>
                             <td>${c.catName}</td>
                             <td>${c.grade}</td>   
-                            <td><a href="Question?catid=${c.catId}">DoExam</a></td>
+                            <td><a href="Question?catid=${c.catId}">Quiz</a></td>
                             <td><a href="DeleteCat?catid=${c.catId}" onclick="myFunctin()">${admin==null?"":"Delete"}</a></td>
                         </tr>
                     </c:forEach>
@@ -114,19 +114,22 @@
                 <div class="collapse" id="collapseExample" style="margin-top: 1.5em;">
                     <div class="card card-body" style="width:70vh;margin-top: 1em">
                         <form action="Add" method="post">
-                            
                             <input type="text" name="grade_page" value="${page}" hidden>
                             Category : <input type="text" name="cat"/><br>
                             Grade : <input type="text" name="grade"/><br>
                             <input type="submit" value="confirm" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
                                    color:#3aaf9d;margin-left: 13em"/>
-                        </form>                  
+                        </form>                            
                     </div>
                 </div>
             </div>
         </div>
-
-
+        <div class="row justify-content-center">
+            <div style="margin-top: 2.5em; margin-bottom : 5em;">
+                <a href="Search.jsp" style="border-color:#3aaf9d;background-color:#3aaf9d; 
+               color:#ffffff;border-radius:10px;padding:10px;margin-bottom: 4.5em;text-align:center; border:0.1em solid;">Back!</a>
+            </div>
+        </div>
     </body>
 </html>
 <div id="loading"></div>
