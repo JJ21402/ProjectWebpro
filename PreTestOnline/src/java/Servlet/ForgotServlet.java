@@ -78,7 +78,7 @@ public class ForgotServlet extends HttpServlet {
             
             int i = ps.executeUpdate();
             if (i > 0) {
-                response.sendRedirect("/Index.jsp");
+                getServletContext().getRequestDispatcher("/Index.jsp").forward(request, response);
             } else {
                 response.sendRedirect("/Forgottest.jsp");
             }
