@@ -40,10 +40,7 @@
                 padding-left: 13px;
                 border: 1px solid #ccc;
             }
-            .page    { display: none; padding: 0 0.5em; }
-            /*        .page h1 { font-size: 2em; line-height: 1em; margin-top: 1.1em; font-weight: bold; }
-                    .page p  { font-size: 1.5em; line-height: 1.275em; margin-top: 0.15em; }*/
-
+            
             #loading {
                 display: block;
                 position: absolute;

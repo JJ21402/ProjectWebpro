@@ -24,6 +24,7 @@
                 
             }
     </style>
+    <title>AboutUs</title>
 </head>
 <body>
     <footer>

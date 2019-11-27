@@ -24,7 +24,7 @@
                 margin-top: 1em;
                 width: 300vh;
                 height: 190vh;
-                text-align: center;
+                
             }
             p{
                 font-family: 'Questrial', sans-serif;
@@ -33,10 +33,7 @@
             body{
                 height: 200vh;
             }
-            .page    { display: none; padding: 0 0.5em; }
-            /*        .page h1 { font-size: 2em; line-height: 1em; margin-top: 1.1em; font-weight: bold; }
-                    .page p  { font-size: 1.5em; line-height: 1.275em; margin-top: 0.15em; }*/
-
+            
             #loading {
                 display: block;
                 position: absolute;
@@ -140,9 +137,11 @@
                     <c:forEach items="${ques}" var="q" varStatus="qvs">
                         <div class="row" style="margin-top: 1.5em">
                             <div style="margin-right: 2em;font-family: 'Questrial', sans-serif;font-size: 22px">${qvs.count}. ${q.questName} </div>
+                    
                             <div class="col">
                                 <ol class="d">
                                     <c:forEach items="${q.answers}" var="x" varStatus="vs">
+                                        <br>
                                         <li>
                                             <input type="radio" value="${x.ansId}"name="ans${qvs.count}"/>${x.ansName}
                                         </li>

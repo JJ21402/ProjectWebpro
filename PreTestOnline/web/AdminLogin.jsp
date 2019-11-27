@@ -39,9 +39,7 @@
                 padding-left: 13px;
                 border: 1px solid #ccc;
             }
-            .page    { display: none; padding: 0 0.5em; }
-            /*        .page h1 { font-size: 2em; line-height: 1em; margin-top: 1.1em; font-weight: bold; }
-                    .page p  { font-size: 1.5em; line-height: 1.275em; margin-top: 0.15em; }*/
+           
 
             #loading {
                 display: block;
@@ -56,7 +54,10 @@
                 background-repeat: no-repeat;
                 background-position: center;
             }
-
+            a.home{
+             text-decoration:none;
+             
+        }
         </style>
         <script>
             function onReady(callback) {
@@ -85,6 +86,9 @@
                 
                 <div class="col" style="color:#3aaf9d;margin-top: 1.5em;text-align: center">
                     <div style="font-size: 36px;font-family: 'Questrial', sans-serif;">Admin Login</div>
+                    <div style="color: red">
+                        ${msg}
+                    </div>
                     <div style="margin-top: 0.4em;">
                         <img src="images/logologin.png" width="125px" height="125px"/>
                         <div style="margin-top: 0.8em;color: #A6ACAF;font-family: 'Questrial', sans-serif;">Welcome Back!</div>
@@ -99,9 +103,14 @@
                         </form>
 
                     </div>
+                    <div style="margin-top: 0.5em">
+                        <a href="HomePage.jsp" class="home"
+                           style="color: #3aaf9d;"
+                           >HomePage</a>
+                    </div>
                 </div>
             </div>
-
+        </div>
     </body>
 </html>
 <div id="loading"></div>

@@ -71,10 +71,7 @@
                 text-decoration:none;
 
             }
-            .page    { display: none; padding: 0 0.5em; }
-            /*        .page h1 { font-size: 2em; line-height: 1em; margin-top: 1.1em; font-weight: bold; }
-                    .page p  { font-size: 1.5em; line-height: 1.275em; margin-top: 0.15em; }*/
-
+            
             #loading {
                 display: block;
                 position: absolute;
@@ -115,8 +112,10 @@
             <div class="row justify-content-center">
                 <div class="col" style="margin-top: 1.5em;">
                     <div style="margin-left: 1em;font-size: 30px;color:#3aaf9d;text-align: center;font-family: 'Questrial', sans-serif;">
-                        Registration Form${message}
-
+                        Registration Form
+                    </div>
+                    <div style="color:red;text-align: center">
+                        ${message}
                     </div>
                     <div style="text-align: center;margin-top: 1.5em;">
                         <img src="images/logologin.png" alt="regis" width="120px" height="120px"/>

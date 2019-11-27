@@ -72,9 +72,6 @@
              text-decoration:none;
              
         }
-         .page    { display: none; padding: 0 0.5em; }
-/*        .page h1 { font-size: 2em; line-height: 1em; margin-top: 1.1em; font-weight: bold; }
-        .page p  { font-size: 1.5em; line-height: 1.275em; margin-top: 0.15em; }*/
 
         #loading {
             display: block;
@@ -121,7 +118,7 @@
     <body style="max-height: 100vh"> 
         <div class="container" style="margin-top: 7em;border-radius: 15px;">
             <div class="row justify-content-center">
-                <div class="col-5" style="background-color:#3aaf9d;min-height: 70vh; border-top-left-radius: 15px;
+                <div class="col-5" style="background-color:#3aaf9d;min-height: 75vh; border-top-left-radius: 15px;
                      border-bottom-left-radius:15px;background-size: cover">
                     <div style="margin-top: 1em; margin-left: 0.5em;font-family: 'Questrial', sans-serif;">
                         <a href="HomePage.jsp" class="home"
@@ -143,6 +140,9 @@
                 </div>
                 <div class="col" style="color:#3aaf9d;margin-top: 1.5em;text-align: center">
                     <div style="font-size: 36px;font-family: 'Questrial', sans-serif;">Member Login</div>
+                    <div style="color: red">
+                        ${msg}
+                    </div>
                     <div style="margin-top: 0.8em;">
                         <img src="images/logologin.png" width="125px" height="125px"/>
                         <div style="margin-top: 0.8em;font-family: 'Questrial', sans-serif;">Login here using your username and password</div>
@@ -153,9 +153,12 @@
                             <input type="password" placeholder="Password" name="password" required/></br>
                             <input type="submit" value="Login" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
                                    color:#3aaf9d;border-radius:10px;margin-top: 1em;font-family: 'Questrial', sans-serif;"/>
-                            <a href="Forgottest.jsp">Forgot password</a>
+                            
                         </form>
 
+                    </div>
+                    <div style="margin-top: 0.8em;font-family: 'Questrial', sans-serif;">
+                        <a href="Forgottest.jsp">Forgot password</a>
                     </div>
                     <div style="margin-top: 0.5em;font-family: 'Questrial', sans-serif;">
                         <a href="AdminLogin.jsp">Login for admin click here</a>
