@@ -103,7 +103,7 @@
                         </form>
 
                     </div>
-                    <div style="margin-top: 0.5em">
+                    <div style="margin-top: 0.5em;font-family: 'Questrial', sans-serif;">
                         <a href="HomePage.jsp" class="home"
                            style="color: #3aaf9d;"
                            >HomePage</a>

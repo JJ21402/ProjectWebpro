@@ -22,13 +22,13 @@
     </style>
     <body>
     <body style="max-height: 75vh"> 
-        <div class="container" style="margin-top: 6em;border-radius: 30px;">
+        <div class="container" style="margin-top: 6em;border-radius: 30px;font-family: 'Questrial', sans-serif;">
             <div class="row justify-content-center">
                 <div class="col-5" style="background-color:#ffffff;min-height: 60vh; border-top-left-radius: 15px;border-bottom-left-radius:15px;background-size: cover"> 
                     <div style="margin-top: 2em; margin-left: 1.5em;">
                         <div class="col" style="color:#3aaf9d;margin-top: 1.5em;text-align: center">
                             <div style="font-size: 36px">Result of the Exam!</div>
-                            <div style="margin-top: 0.8em;">
+                            <div style="margin-top: 0.8em;font-family: 'Questrial', sans-serif;">
                                 <img src="images/logologin.png" width="125px" height="125px"/>
                                 <div style="font-size: 28px;margin-top: 0.5em">Category : ${catname}</div>
                                 <div style="font-size: 28px;margin-top: 0.5em">Grade : ${catgrade}</div>
@@ -37,7 +37,7 @@
                                 </div>
                                 <div style="margin-top: 2.5em; margin-bottom : 5em;">
                                     <a href="Search.jsp" style="border-color:#3aaf9d;background-color:rgba(0,0,0,0); 
-                                       color:#3aaf9d;border-radius:10px;padding:10px;margin-top: 4.5em;text-align:center; border:0.1em solid;">Back!</a>
+                                       color:#3aaf9d;border-radius:10px;padding:10px;margin-top: 4.5em;text-align:center; border:0.1em solid;font-family: 'Questrial', sans-serif;">Back</a>
                                 </div>
                             </div>
                         </div>

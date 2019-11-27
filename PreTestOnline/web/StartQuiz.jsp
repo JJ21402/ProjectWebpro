@@ -69,8 +69,8 @@
             margin:0 0.2em 0.2em 0;
             border-radius:0.12em;
             text-decoration:none;
-            font-weight:300;
-            text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+/*            font-weight:300;
+            text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);*/
 
         }
         </style>
@@ -103,11 +103,11 @@
                     </div> 
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" style="font-family: 'Questrial', sans-serif;">
                 <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> 
                     ${admin==null?"":"ADD"}
                 </a>
-                <div class="collapse" id="collapseExample" style="margin-top: 1.5em;">
+                <div class="collapse" id="collapseExample" style="margin-top: 1.5em;font-family: 'Questrial', sans-serif;">
                     <div class="card card-body" style="width:70vh;margin-top: 1em">
                         <form action="Addqueschoice" method="get"> 
                             <input type="text" name="catid" value="${catid}" hidden>
@@ -123,8 +123,8 @@
                                 
 
                             </select>
-                            <input type="submit" value="confirm" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
-                                   color:#3aaf9d;margin-left: 13em"/>
+                            <input type="submit" value="confirm" style="border-color:#3aaf9d;background-color:#ffffff;margin-left: 12em; 
+               color:#3aaf9d;border-radius:10px;padding:10px;text-align:center; border:0.1em solid #3aaf9d;font-family: 'Questrial', sans-serif;"/>
                         </form>                  
                     </div>
                 </div>
@@ -132,7 +132,7 @@
             <div class="row" style="margin-left:1em;font-family: 'Questrial', sans-serif;font-size: 26px;margin-top: 1em">
                 Please make sure that you answer all question
             </div>
-            <div class="row" style="margin-left: 2em">
+            <div class="row" style="margin-left: 2em;font-family: 'Questrial', sans-serif;">
                 <form action="Check" method="post">
                     <c:forEach items="${ques}" var="q" varStatus="qvs">
                         <div class="row" style="margin-top: 1.5em">
@@ -150,10 +150,11 @@
                             </div>
                         </div>
                     </c:forEach>
-                    <div class="row justify-content-center" style="width:100%">
+                    <div class="row justify-content-center" style="width:100%;font-family: 'Questrial', sans-serif;">
                          <input type="text" name="catname" value="${namecat}" hidden>
                          <input type="text" name="catgrade" value="${gradecat}" hidden>
-                        <input type="submit" value="submit" style="margin-top: 1em;background-color:rgba(0,0,0,0);"/>
+                        <input type="submit" value="submit" style="border-color:#3aaf9d; background-color:rgba(0,0,0,0); 
+                                   color:#3aaf9d;border-radius:10px;margin-top: 1em;font-family: 'Questrial', sans-serif;"/>
                     </div>
                     
                 </form>
